@@ -18,6 +18,10 @@
 # misc
 .DS_Store
 *.pem
+/static
+blog/*
+public/*
+images/*
 
 # debug
 npm-debug.log*
