@@ -1,0 +1,29 @@
+import Image from 'next/image'
+import BlogLayout from '../../../components/BlogLayout'
+
+export const meta = {
+    date: 'March 23, 2020',
+    description: 'I can not help but feel upset at my government’s response to the corona virus epidemic that is currently going on.',
+    image: 'https://cdn1.thelifeofjamal.com/wp-content/uploads/2020/03/23114608/beaches-1024x534.jpg',
+    title: 'Frusturations With a Global Pandemic',
+    readTime: 5,
+}
+
+<Image 
+src={meta.image}
+alt="Jamal holding a target"
+width={740}
+height={386}
+/>
+
+# Frusturations With a Global Pandemic
+
+I can not help but feel upset at my government’s response to the corona virus epidemic that is currently going on. There are a long list of reasons why I am upset but to keep it short, here are a few. First, is the fact that we were extremely unprepared even though we had a few months head start. Another, would be the suggestion to continue deficit spending coupled with the hypocrisy of the right’s embracing universal basic income. Lastly, would be the public response and attitude toward the pandemic. I know the last point does not have much to do with the government but, I am frustrated. The pandemic is upending my life and destroying the lives of those around me.
+
+It rubs me the wrong way when I look at how unprepared we were for this sort of thing when we could see it coming months in advance. We recognize that China is known to lie about the statistics that they report to the world community. That alone should cause us to be a bit more cynical when looking at the numbers they report about corona virus infections. Heck, even if you look at numbers they were reporting you could get a sense that this virus spreads incredibly quickly and that it could overwhelm our healthcare institutions if nothing is done about it. Some people might argue that we have been proactive by closing down travel to some countries in Europe and Asia, but that is not enough. We knew the virus would make it here eventually and we were not prepared with the supplies we needed. For the first week there weren’t even any tests available!
+
+I am not a fan of deficit spending and there are many proposals from both sides of the isle calling for universal basic income for the working class. You see, I am for UBI if and only if we can afford to pay for it through some sort of tax. I am not for it if it means more deficit spending. Yes we would receive one thousand or maybe even three thousand dollars a month but we would just end up owing so much more in the long run. I understand why people are calling for it though. People are being laid off and most people live paycheck to paycheck. We have no clue when this pandemic will be over and if something is not done then we could see a complete collapse of the economy. Then this begs the question. Why are we floating so much debt when the economy is expanding? Why did we cut taxes when we are floating all of this debt! We should have been in a much better position then what we are now after 10 or so years of economic expansion. What a sham.
+
+The response and attitude from my generation toward this pandemic is disgusting. As I type there are thousands of young adults partying on the beaches of Florida knowing full well what is happening. My friends’ father is currently fighting for his life against the corona virus and these people are acting like this is a joke. Yes, you might have a low chance of dying from this virus but you could still end up in a hospital, taking up a bed that could be used for someone who deserves it. Not only that but you become dangerous to anyone you might interact with. Whether that be your friends, your parents or your grand parents. There are consequences for what we do. We must be better.
+
+export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout> 

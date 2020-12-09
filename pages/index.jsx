@@ -1,7 +1,10 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Image, Container, Grid, Box, Flex, Heading, Text } from 'theme-ui';
+import { jsx } from 'theme-ui'
+import { Image, Container, Grid, Box, Flex, Heading, Text } from 'theme-ui'
+// import Gun from '../blog/politics/my-first-experience-with-a-gun.mdx'
+import { posts } from '../utils/getPoliticsPosts'
 
+console.log(posts)
 export default function Home() {
     return (
         <div sx={{ height: `calc(100vh - 120px)` }}>
@@ -102,7 +105,7 @@ export default function Home() {
                         </Box>
                         <Box bg="muted">
                             <Image
-                                src={'../static/JamalLogo.png'}
+                                src={'../public/JamalLogo.png'}
                                 sx={{
                                     width: 101,
                                     height: 138,
@@ -135,5 +138,5 @@ export default function Home() {
                 </Container>
             </div>
         </div>
-    );
+    )
 }

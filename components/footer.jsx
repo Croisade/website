@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import Link from 'next/link';
+import { jsx } from 'theme-ui'
+import Link from 'next/link'
 
 const Footer = () => {
     return (
@@ -36,7 +36,7 @@ const Footer = () => {
                 </Link>
             </footer>
         </header>
-    );
-};
+    )
+}
 
-export default Footer;
+export default Footer

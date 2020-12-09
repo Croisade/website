@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import Link from 'next/link';
+import { jsx } from 'theme-ui'
+import Link from 'next/link'
 
 const Header = () => {
     return (
@@ -54,7 +54,7 @@ const Header = () => {
                 </div>
             </div>
         </header>
-    );
-};
+    )
+}
 
-export default Header;
+export default Header

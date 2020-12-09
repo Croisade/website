@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import { jsx, ThemeProvider } from 'theme-ui';
-import theme from '../theme';
-import Nav from '../components/nav';
-import Header from '../components/header';
-import Dark from '../components/darkmode';
+import { jsx, ThemeProvider } from 'theme-ui'
+import theme from '../theme'
+import Nav from '../components/nav'
+import Header from '../components/header'
+import Dark from '../components/darkmode'
 
 export default function App({ Component, pageProps }) {
     return (
@@ -16,5 +16,5 @@ export default function App({ Component, pageProps }) {
                 {/* <Footer /> */}
             </div>
         </ThemeProvider>
-    );
+    )
 }

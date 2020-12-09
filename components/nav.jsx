@@ -1,12 +1,10 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import Link from 'next/link';
-import { Button, useColorMode } from 'theme-ui';
-import { NavLink } from 'theme-ui';
-import { Flex } from 'theme-ui';
+import { jsx } from 'theme-ui'
+import Link from 'next/link'
+import { Button, useColorMode } from 'theme-ui'
 
 const Nav = () => {
-    const [colorMode, setColorMode] = useColorMode();
+    const [colorMode, setColorMode] = useColorMode()
     return (
         <nav
             sx={{
@@ -34,7 +32,7 @@ const Nav = () => {
                 Toggle {colorMode === 'default' ? 'Dark' : 'Light'}
             </Button> */}
         </nav>
-    );
-};
+    )
+}
 
-export default Nav;
+export default Nav

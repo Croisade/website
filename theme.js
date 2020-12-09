@@ -1,4 +1,4 @@
-import { tailwind, dark } from '@theme-ui/presets';
+import { tailwind, dark } from '@theme-ui/presets'
 
 const theme = {
     ...tailwind,
@@ -43,6 +43,6 @@ const theme = {
             borderRadius: 99999
         }
     }
-};
+}
 
-export default theme;
+export default theme
