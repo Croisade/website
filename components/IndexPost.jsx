@@ -14,7 +14,7 @@ export const IndexPost = ({ post }) => {
             <article>
                 <HeadPost meta={meta} />
                 <Link href={'/blog' + link}>
-                    <a>Read more... </a>
+                    <a sx={{ color: 'primary', cursor: 'pointer' }}>Read more... </a>
                 </Link>
             </article>
         </div>

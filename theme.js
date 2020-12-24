@@ -24,6 +24,13 @@ const theme = {
             m: 0,
             mx: 'auto',
             bg: 'primary'
+        },
+        navlink: {
+            ml: 3,
+            py: 2,
+            cursor: 'pointer',
+            color: '#fff',
+            fontWeight: 'bold'
         }
     },
     colors: {

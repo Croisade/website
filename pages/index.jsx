@@ -21,13 +21,6 @@ export default function Home() {
                         display: 'block'
                     }}
                 />
-
-                {/* // <div sx={{variant: 'containers.page', display: 'flex', alignItems: 'center', height: '100%'}}>
-    //   <h1 sx={{fontSize: 8, my: 0}}>The life of jamal</h1>
-    // </div>
-    // <Link href="/blog/technology/">
-    //   <a>Blog</a>
-    // </Link> */}
             </Container>
             <div sx={{ maxWidth: '70%', ml: 'auto', mr: 'auto' }}>
                 <Grid width={[256, null, 192]}>
@@ -70,7 +63,7 @@ export default function Home() {
                 </Grid>
 
                 <Container pt={4}>
-                    <Grid width={[256, null, 192]} sx={{ justifyContent: 'center' }}>
+                    <Grid gap={3} columns={[1, null, 3]} sx={{ justifyContent: 'center' }}>
                         <Box bg="muted">
                             <Heading sx={{ textAlign: 'center', color: 'primary' }}>
                                 Infrastructure
@@ -121,7 +114,7 @@ export default function Home() {
             </div>
             <div sx={{ maxWidth: '80%', ml: 'auto', mr: 'auto' }}>
                 <Container pt={4}>
-                    <Grid width={[128, null, 192]}>
+                    <Grid gap={3} columns={[1, null, 4]}>
                         <Box bg="muted">
                             <Heading sx={{ textAlign: 'center' }}>Technology</Heading>
                         </Box>

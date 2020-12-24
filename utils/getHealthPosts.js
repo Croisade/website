@@ -5,10 +5,10 @@ function importAll(r) {
             .substr(1)
             .replace(/\/index\.mdx$/, '')
         return {
-            link: `${newUrl}`,
+            link: `/health${newUrl}`,
             module: r(fileName)
         }
     })
 }
 
-export const posts = importAll(require.context('../pages/blog/', true, /\.mdx$/))
+export const posts = importAll(require.context('../pages/blog/health', true, /\.mdx$/))

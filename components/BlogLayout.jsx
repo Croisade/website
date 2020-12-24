@@ -1,7 +1,11 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, Box, Grid } from 'theme-ui'
 import Head from 'next/head'
+import Newsletter from './newsletter'
+import Banner from './Banner'
+import RecentTen from './recentTen'
 
+//@todo breadcrumbs
 export default function BlogLayout({ meta, children }) {
     return (
         <div>
@@ -13,8 +17,19 @@ export default function BlogLayout({ meta, children }) {
             </Head>
             <main>
                 <div sx={{ height: `calc(100vh - 120px)` }}>
+                    <Banner />
                     <div sx={{ maxWidth: '70%', ml: 'auto', mr: 'auto' }}>
-                        <div className="content">{children}</div>
+                        <Grid gap={2} columns={[1, null, 2, '2.5fr 1fr']}>
+                            <Box>
+                                <div className="content">{children}</div>
+                            </Box>
+                            <Box>
+                                <Grid gap={2} columns={[1, null, 1]}>
+                                    <Newsletter />
+                                    <RecentTen />
+                                </Grid>
+                            </Box>
+                        </Grid>
                     </div>
                 </div>
             </main>
