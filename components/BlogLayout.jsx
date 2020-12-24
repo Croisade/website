@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import { jsx, Box, Grid } from 'theme-ui'
 import Head from 'next/head'
-import Newsletter from './newsletter'
+import Newsletter from './Newsletter'
 import Banner from './Banner'
-import RecentTen from './recentTen'
+import RecentTen from './RecentTen'
 
 //@todo breadcrumbs
 export default function BlogLayout({ meta, children }) {

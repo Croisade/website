@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import Link from 'next/link'
-import Dark from './darkmode'
+import Dark from './Darkmode'
 
 //@todo implement dropdown on blog
 const Header = () => {

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import SidePost from './sidePost'
+import SidePost from './SidePost'
 import { posts } from '../utils/getAllPosts'
 import { Grid } from 'theme-ui'
 import sortBy from 'lodash/sortBy'
@@ -21,7 +21,6 @@ export default function RecentTen() {
                         meta: { date }
                     }
                 } = post
-                console.log(date)
                 const dateStr = date
                 return new Date(dateStr)
             })
