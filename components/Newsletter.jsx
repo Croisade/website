@@ -14,7 +14,8 @@ export const Newsletter = () => {
                 borderColor: 'primary',
                 ml: 2,
                 mr: 2,
-                mt: 5
+                mt: 5,
+                bg: 'muted'
             }}
             as="form"
             onSubmit={(e) => e.preventDefault()}>
