@@ -1,10 +1,11 @@
-import React from 'react'
+/** @jsx jsx */
+import { jsx, Text, Heading } from 'theme-ui'
 
 export const HeadPost = ({ meta, isBlogPost }) => (
     <div>
-        <h1 className={isBlogPost ? 'great-title' : null}>{meta.title}</h1>
+        <Heading as="h3">{meta.title}</Heading>
         <div className="details">
-            {isBlogPost ? null : <p>{meta.description}</p>}
+            <Text sx={{ color: 'index', marginTop: '2', mb: '2' }}>{meta.description}</Text>
             <span>{meta.date}</span>
             <span role="img" aria-label="one coffee">
                 ☕ {meta.readTime + ' min read'}

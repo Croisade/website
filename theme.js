@@ -36,9 +36,11 @@ const theme = {
     colors: {
         ...tailwind.colors,
         muted: '#F6FCFF',
+        index: '#4c4f52',
         modes: {
             dark: {
-                ...dark.colors
+                ...dark.colors,
+                index: '#9ea1a3'
             }
         }
     },
