@@ -2,9 +2,8 @@
 import { jsx } from 'theme-ui'
 import { Grid, Box, Text } from 'theme-ui'
 import useSWR, { mutate } from 'swr'
-import fetch from 'unfetch'
 
-export default function Home() {
+export default function Dashboard() {
     const fetcher = (...args) => fetch(...args).then((res) => res.json())
     const { data, error } = useSWR('/api/youtube', fetcher)
 
@@ -16,7 +15,7 @@ export default function Home() {
             <Text>Home</Text>
 
             <Grid gap={2} columns={[1, null, 2]}>
-                <Box bg="muted">{data.viewCount}</Box>
+                <Box bg="primary">{data.viewCount}</Box>
                 <Box bg="muted">{data.subscriberCount}</Box>
                 <Box bg="primary">Box</Box>
                 <Box bg="muted">Box</Box>
