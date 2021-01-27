@@ -1,0 +1,27 @@
+import Image from 'next/image'
+import BlogLayout from '../../../components/BlogLayout'
+
+export const meta = {
+    date: 'January 27, 2020',
+    description:
+        'I Passed My AWS Certified Developer Exam (CDA)! I am happy to announce that I passed with a score of 856. I am going to share the resources that I used to pass the test and hopefully they might help you pass as well.',
+    image: undefined,
+    title: 'I Passed My AWS Certified Developer Exam (CDA)',
+    readTime: 8
+}
+
+# I Passed My AWS Certified Developer Exam (CDA)
+
+I Passed My AWS Certified Developer Exam (CDA)! I am happy to announce that I passed with a score of 856. I am going to share the resources that I used to pass the test and hopefully they might help you pass as well. This marks my second AWS certification that I have earned and that leaves one more to go. Next up is the AWS Certified Sysops Administrator Associate exam. Let me talk about the resources I used.
+
+This time around I used the exact same method that allowed me to pass the solutions architect exam. For video lectures and hands on, I used Stephane Meeraks’ course on [Udemy](https://www.udemy.com/course/aws-certified-developer-associate-dva-c01/). I can not recommend this guy enough. His pacing is great, his explanations are in-depth and I felt like I got my money’s worth out of the class. Not only does he teach to the exam but he tries to give you real world scenarios to teach you how these services are used in a professional environment. I have no real complaints. By the time you finish his lectures you should be able to take Jon Bonso’s practice tests.
+
+Jon Bonso’s [practice tests](https://www.udemy.com/course/aws-certified-developer-associate-practice-exams-amazon/) are also what I used to study for the AWS Developer exam. These practice tests are a lot harder then the exam itself. I must warn you that you will probably score anywhere in the range between 40 and 60 on your first exam attempt for Jon Bonso’s practice tests. Scoring low is fine for the first time. In fact, almost everyone does. The real value in his practice tests are the explanations you receive after you complete an exam. The explanations are incredibly detailed and breakdown why your answer is wrong. There are also cheat sheets and study guides provided on the [tutorialsdojo website](https://tutorialsdojo.com/).
+
+In terms of my experience with the test I will be honest, but I will not give anything away. The test is world’s easier then the solutions architect exam and I think most people would agree. It is not because the subject matter is easier but because of how the exams asks’ questions. It is very straightforward in what it is looking for so you rarely have to guess. This is my second time taking a AWS exam and I have picked up that there are almost always two answers that are obviously wrong. This makes things easy because it makes almost every question a coin flip.
+
+Make sure you know about Lambda, API Gateway and Code Commit. If you know the ins and outs of these services then I am sure you will pass. DynamoDB is important too. Personally, I felt like whenever I did get stuck it was related to a question about DynamoDB. Seriously studying the material will be your best friend for taking the exam.
+
+Next up is the AWS Certified Sysops Administrator Associate exam. I read online that if you have passed the Solutions’ Architect and the Developer exams then you should be able to pass the SysOps exam within a week of the Developer exam. I am going to be aggressive and test this theory out myself. I will see if I can schedule my exam for this Saturday, exactly a week from when I took the last exam and lets see how I do.
+
+export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout>

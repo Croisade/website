@@ -1,4 +1,4 @@
-import { tailwind, dark } from '@theme-ui/presets'
+import { tailwind, dark, deep } from '@theme-ui/presets'
 
 const theme = {
     ...tailwind,
@@ -31,6 +31,12 @@ const theme = {
             cursor: 'pointer',
             color: '#fff',
             fontWeight: 'bold'
+        },
+        hr: {
+            color: 'primary',
+            width: '30%',
+            mx: 'auto',
+            my: '3'
         }
     },
     colors: {

@@ -34,7 +34,7 @@ export const Newsletter = () => {
                         fontWeight: 'bold',
                         textAlign: 'center'
                     }}>
-                    Ready to join the larva lounge?
+                    Ready to join the Coder Cafe?
                 </Text>
                 <Text
                     sx={{
@@ -42,14 +42,38 @@ export const Newsletter = () => {
                         ml: 3,
                         textAlign: 'center'
                     }}>
-                    Join our community for a weekly dose of our best content with updates on the
-                    happenings of my life
+                    Join our community for a weekly dose of my latest videos and articles.{' '}
                 </Text>
-                <Label htmlFor="email">email</Label>
-                <Input type="email" name="email" mb={3} />
-                <Flex sx={{ justifyContent: 'center' }}>
-                    <Button>Submit</Button>
-                </Flex>
+                <form
+                    action="https://live.us3.list-manage.com/subscribe/post?u=827b5c696729af48377892a43&amp;id=5a7c20ecb7"
+                    method="post"
+                    id="mc-embedded-subscribe-form"
+                    name="mc-embedded-subscribe-form"
+                    className="validate"
+                    target="_blank"
+                    noValidate>
+                    <Label htmlFor="email">Email</Label>
+                    <Input
+                        type="email"
+                        name="EMAIL"
+                        className="required email"
+                        id="mce-EMAIL"
+                        mb={3}
+                    />
+                    {/* <div id="mce-responses" className="clear">
+                        <div
+                            className="response"
+                            id="mce-error-response"
+                            style="display:none"></div>
+                        <div
+                            className="response"
+                            id="mce-success-response"
+                            style="display:none"></div>
+                    </div> */}
+                    <Flex sx={{ justifyContent: 'center' }}>
+                        <Button>Submit</Button>
+                    </Flex>
+                </form>
             </div>
         </Box>
     )

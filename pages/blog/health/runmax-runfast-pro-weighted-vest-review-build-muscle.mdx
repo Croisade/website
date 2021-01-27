@@ -3,10 +3,11 @@ import BlogLayout from '../../../components/BlogLayout'
 
 export const meta = {
     date: 'June 30, 2019',
-    description: 'I’ve recently just picked up the Runmax RunFast pro weighted vest for 36 dollars on Amazon here. So far I am very impressed with the product. The Runmax RunFast pro weighted vest is not considered the best weighted vest but, in my opinion, it does the job very well.',
-    image: '',
+    description:
+        'I’ve recently just picked up the Runmax RunFast pro weighted vest for 36 dollars on Amazon here. So far I am very impressed with the product. The Runmax RunFast pro weighted vest is not considered the best weighted vest but, in my opinion, it does the job very well.',
+    image: '/../public/vest.jpg',
     title: 'RunFast Pro Weighted Vest Review - RunMax',
-    readTime: 4,
+    readTime: 4
 }
 
 # RunFast Pro Weighted Vest Review - RunMax
@@ -25,4 +26,8 @@ Overall I would definitely recommend this vest to anyone who runs or does calist
 
 Interested? [Buy it on Amazon.](https://amzn.to/2xjBy3F)
 
-export default ({ children }) => <BlogLayout meta={meta} sortedPosts={posts}>{children}</BlogLayout> 
+export default ({ children }) => (
+    <BlogLayout meta={meta} sortedPosts={posts}>
+        {children}
+    </BlogLayout>
+)

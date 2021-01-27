@@ -1,0 +1,25 @@
+import Image from 'next/image'
+import BlogLayout from '../../../components/BlogLayout'
+
+export const meta = {
+    date: 'November 22, 2019',
+    description:
+        'Save yourself some time and do Virtual Hacking Labs (VHL) before you attempt the OSCP PWK',
+    image: undefined,
+    title: 'Do Virtual Hacking Labs (VHL) before the OSCP PWK',
+    readTime: 4
+}
+
+# Do Virtual Hacking Labs (VHL) before the OSCP PWK
+
+Save yourself some time and do Virtual Hacking Labs (VHL) before you attempt the OSCP PWK. The reason why I say that is because if you have been following me or my blog you will know that I have failed the OSCP twice. The first time I failed I was not able to root a single machine besides the buffer overflow. The second time I failed I managed to get 60 points. I plan to retake my test on the ninth of December so wish me luck!
+
+The reason why I recommend that you try to complete the VHL labs before the OSCP is because it is so much better. You are probably reading this and thinking “no way”. But it is absolutely true. One of the biggest advantages is the lack of the offsec “try harder” culture. Yes, we need to embrace this and to give it our all when it comes to pentesting but this skill is not the easiest to learn. I have been met with people telling me to try harder when you are absolutely in a rut, and it is of no help at all. VHL provides you with hints that give you the bare minimum to figuring out what needs to be done next. This provides a better environment to learn in, especially for a beginner who knows nothing.
+
+VHL labs are a lot cheaper then OSCP. I recommend you purchase a month’s worth of access to VHL lab environment and then tackle the OSCP. By the time you start the OSCP you should have some sort of process. This is great! Now you won’t waste as much time getting lost in the roots of some of the easier machines.
+
+The VHL coursework is also more update to date and useful then the PWK coursework. If you are someone who learns a lot through reading then take a look at the VHL sample pdf. It is easy to get an idea of the quality of learning you will receive in the course from that.
+
+I still recommend that you know the basics of how to get around a Linux terminal and networking before you decide to hop into pentesting. Believe me, you will grow so much as a person and as a tech after taking both of these courses. After failing twice I am currently enrolled in VHL. This environment is helping me refine my process and exposes what areas I am weak in. Currently I need to work on privilege escalation in both Windows and Linux environments. Keep an eye out on my blog for updates on my progress. I am aiming for 2-3 blog posts and Youtube videos a week! Thank you for your support.
+
+export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout>
