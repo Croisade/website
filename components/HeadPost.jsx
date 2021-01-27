@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Text, Heading } from 'theme-ui'
 
-export const HeadPost = ({ meta, isBlogPost }) => (
+export const HeadPost = ({ meta }) => (
     <div>
         <Heading as="h3">{meta.title}</Heading>
         <div className="details">

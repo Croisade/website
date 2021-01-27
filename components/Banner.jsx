@@ -9,7 +9,7 @@ export const Banner = () => {
             <Container p={4}>
                 <Link href="/">
                     <Image
-                        src="https://thelifeofjamal.com/wp-content/uploads/2019/05/cropped-Logo.jpg?x79259"
+                        src="https://cdn1.thelifeofjamal.com/banner.jpg"
                         alt="The life of jamal banner logo"
                         width={800}
                         height={160}

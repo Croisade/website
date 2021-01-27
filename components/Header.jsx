@@ -8,7 +8,6 @@ const Header = () => {
     return (
         <header
             sx={{
-                variant: 'styles.header',
                 bg: 'primary',
                 borderBottom: '1px solid',
                 borderColor: 'primary'

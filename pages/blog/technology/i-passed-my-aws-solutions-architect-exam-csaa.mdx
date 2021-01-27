@@ -1,0 +1,29 @@
+import Image from 'next/image'
+import BlogLayout from '../../../components/BlogLayout'
+
+export const meta = {
+    date: 'January 14, 2020',
+    description:
+        'I passed my AWS solutions architect associate exam (CSAA) on January 4th! I did not enjoy pentesting as much as I thought I would so I decided to make a switch.',
+    image: undefined,
+    title: 'I Passed My AWS Certified Solutions Architect Exam (CSAA)',
+    readTime: 8
+}
+
+# I Passed My AWS Certified Solutions Architect Exam (CSAA)
+
+Good news everyone, I passed my AWS solutions architect associate exam (CSAA) on January 4th! I did not enjoy pentesting as much as I thought I would so I decided to make a switch. So on December 8th I purchased a course on Udemy to start my cloud journey.
+
+At this point I had no clue what cloud was. I would always hear people talk about how it is going to be the future and how secure the jobs are. This piqued my interest so I looked into AWS. AWS or Amazon Web Services is a popular cloud service provider that offers infrastructure as a service. The certifications I am most interested are the certified solutions architect associate, certified developer associate and the certified sysops associate. AWS cloud certifications are extremely popular right now too if you check a job recruiting website.
+
+I used two resources to my pass my certified solutions architect associate exam. The first resource I used was Stephane Maarek’s course on [Udemy](https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c01/). Stephane is a great and straightforward instructor that does an amazing job of explaining all of the caveats of AWS. The course features lectures, slides and hands-on sections. The hands-on sections are where this course really shines. He goes above and beyond the exam requirements and tries to show the practical use of different services within AWS.
+
+Not only is his content great for the exam but he is very active on subreddits like [/r/AWSCertifications/](https://old.reddit.com/r/AWSCertifications/). You could send him a message in either the course itself or on Udemy and he is usually great with responding.
+
+The second resource I used to pass my exam is [Jon Bonso’s practice tests](https://www.udemy.com/course/aws-certified-solutions-architect-associate-amazon-practice-exams/). These tests are harder than the exam itself but very similar, which makes it good for practice. There are six practice tests and I would usually score anywhere between the 50-60% range for each exam on my first attempt, which is not good. The great thing is, after the exam you can go through every question and read the reasoning for why each answer is either correct, or incorrect. This helps immensely in learning the services used in AWS. Doing these AWS practice exams and then reviewing the answers is a great way to learn.
+
+Be careful not to brain dump. To avoid this I try not to retake the exam twice in a row. This way I can double-back to it later on to see if I learned from my mistakes. Jon Bonso’s practice tests are a great value and I highly recommend that you take a whack at his practice tests to gauge whether or not you are ready for the exam. If you score poorly, do not worry. Keep taking the AWS practice exams until you start to score above 80%. Once you get above 80% you will be ready for the real exam.
+
+AWS training is cheap to come across but the problem is there are so many people offering services you do not know which ones are worth your time. The AWS solutions architect associate exam is difficult but it is not impossible. I hope this write up will help you in your journey to become a certified solutions architect associate.
+
+export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout>

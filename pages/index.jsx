@@ -1,12 +1,17 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { Text, Heading } from 'theme-ui'
+import { jsx, Text, Heading, Grid } from 'theme-ui'
 import RecentThree from '../components/RecentThree'
 import Banner from '../components/Banner'
+import BlogCard from '../components/BlogCard'
 import Head from 'next/head'
+import sortBy from 'lodash/sortBy'
+import reverse from 'lodash/reverse'
+import map from 'lodash/map'
+import { posts } from '../utils/getAllPosts'
 
-//@todo include meta description
-export default function Home() {
+//@todo include meta description for header, throw props into RecentThree
+export default function Home(sortedPost) {
+    const { sortedPost: post } = sortedPost
     return (
         <div>
             <Head>
@@ -16,7 +21,13 @@ export default function Home() {
                 <title>{'The Life Of Jamal'}</title>
             </Head>
             <Banner />
-            <div sx={{ height: `calc(100vh - 120px)`, maxWidth: '40%', ml: 'auto', mr: 'auto' }}>
+            <div
+                sx={{
+                    height: `calc(100vh - 120px)`,
+                    maxWidth: ['80%', '50%'],
+                    ml: 'auto',
+                    mr: 'auto'
+                }}>
                 <Heading as="h1">Home</Heading>
                 <Heading as="h2" sx={{ mt: '3' }}>
                     Jamal Gardiner
@@ -26,8 +37,41 @@ export default function Home() {
                     website where I keep all of my thoughts and opinions. Everything you want to
                     know and more, is here.
                 </Text>
-                <RecentThree />
+
+                {/* <div sx={{ mt: 5 }}>
+                    <Grid gap={3} columns={[1, null, 3]}>
+                        {post.map((sortedPosts) => (
+                            <BlogCard key={sortedPosts.link} post={sortedPosts} />
+                        ))}
+                    </Grid>
+                </div> */}
+                <div sx={{ mt: 5 }}>
+                    <RecentThree />
+                </div>
             </div>
         </div>
     )
+}
+
+export async function getStaticProps() {
+    const deModuled = map(posts, function (o) {
+        return { link: o.link, module: JSON.parse(JSON.stringify(o.module)) }
+    })
+    const sortedPost = reverse(
+        sortBy(deModuled, function (post) {
+            const {
+                module: {
+                    meta: { date }
+                }
+            } = post
+            const dateStr = date
+            return new Date(dateStr)
+        })
+    )
+
+    return {
+        props: {
+            sortedPost
+        }
+    }
 }

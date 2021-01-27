@@ -1,0 +1,29 @@
+import Image from 'next/image'
+import BlogLayout from '../../../components/BlogLayout'
+
+export const meta = {
+    date: 'January 21, 2020',
+    description:
+        'I have recently decided to transfer my Namecheap WordPress site to aws. In the past I used Namecheap.com to host my website and they were great! Their customer service and documentation is excellent and I would recommend',
+    image: undefined,
+    title: 'I Transfered Namecheap WordPress Site to AWS',
+    readTime: 8
+}
+
+# I Transfered Namecheap WordPress Site to AWS
+
+I have recently decided to transfer my Namecheap WordPress site to aws. In the past I used Namecheap.com to host my website and they were great! Their customer service and documentation is excellent and I would recommend their services to anyone who asked. I thought it would be better for me to migrate my WordPress site over to Amazon Web Services(aws). I did this for a number of reasons which I will get into now.
+
+The biggest reason why I decided to transfer my Namecheap WordPress site to aws was so that I can gain more experience with aws. I have multiple blog posts now about learning aws and becoming certified. I find it easier to learn aws when I am forced to use it. The migration was a bit more difficult then I expect but I have learned a lot from the experience. The process is simple but a newbie like me managed to make it more difficult than it needed to be.
+
+Another reason why I decided to migrate my WordPress site is because I wanted to have something to put on my resume’ when I apply for jobs. I will have a lot more projects on my application then my website but I felt that this would be a good start. I have previously mentioned using the cloud administrator road map that I have found on Reddit. My goal is to complete it still. I plan to tackle it as soon as I pass the developer associate and sysops administrator associate certification by the end of February. Bulking up my resume’ with projects and certifications is going to be crucial for me to get a job in the field.
+
+Lastly, I wanted to have a website that I could scale. Namecheap is great but I did not have as much control as I wanted when it came to scalability. Learning about cloud technology and aws has opened my eyes and has convinced me that this is the way it should be. If my brand ever takes off, or even if it becomes marginally more popular, I would like to make sure that I have the infrastructure in place to support it.
+
+Right now there is not much in terms of infrastructure. Combined with the fact that I am still inexperienced. I am willing to bet that this site will be converted into something to behold once I learn how. I wanted to try my hand at designing an aws diagram. You should expect this diagram to be updated after I make some changes to the website. Take a look!
+
+Next I would like to incorporate s3 for static assets and cloudfront for my CDN. Beyond that, I am not sure of what to do next. Hopefully by that time I would either need to scale horizontally or vertically. If you have any suggestions let me know in the comments section.
+
+Make sure to subscribe to my Youtube if you haven’t. Follow me on Facebook on Instagram too. Next post will either be about making my WordPress website faster or my progress in the gym.
+
+export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout>
