@@ -18,7 +18,6 @@ phases:
       - echo Build started on `date`
       - echo Compiling the Node.js code
       - npm run build
-      - npm run start
 artifacts:
   files:
     - '**/*'
