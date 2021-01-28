@@ -5,7 +5,7 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
-        "deploy": "next start -p 80",
+        "deploy": "next start -- --port $PORT",
         "start": "npm run build && npm run deploy",
         "lint": "eslint --fix .",
         "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
