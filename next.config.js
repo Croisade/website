@@ -13,6 +13,7 @@ const config = {
 const withMDX = require('@next/mdx')({
     extension: /\.mdx?$/
 })
+
 const mdx = withMDX({
     pageExtensions: ['js', 'jsx', 'mdx'],
     images: {
