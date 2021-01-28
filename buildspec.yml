@@ -3,12 +3,8 @@ version: 0.1
 phases:
   install:
     commands:
-      -ls
       # Install dependencies needed
       - npm install
 
       # Upgrade AWS CLI to the latest version
       - pip install --upgrade awscli
-artifacts:
-  files:
-    - public/*
