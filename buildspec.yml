@@ -8,9 +8,17 @@ phases:
 
       # Upgrade AWS CLI to the latest version
       - pip install --upgrade awscli
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies...
+      - npm install
+      - aws --version
   build:
     commands:
+      - echo Build started on `date`
+      - echo Compiling the Node.js code
       - npm run build
+      - npm run start
 artifacts:
   files:
     - '**/*'
