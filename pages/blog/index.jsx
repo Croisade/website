@@ -21,7 +21,13 @@ export default function IndexPage(sortedPost) {
                 <title>{'Blog - The Life Of Jamal'}</title>
             </Head>
             <Banner />
-            <div sx={{ maxWidth: '40%', ml: 'auto', mr: 'auto' }}>
+            <div
+                sx={{
+                    height: `calc(100vh - 120px)`,
+                    maxWidth: ['80%', '50%'],
+                    ml: 'auto',
+                    mr: 'auto'
+                }}>
                 <Heading as="h1">Blog</Heading>
                 <Heading as="h2" sx={{ mt: '3', mb: '2' }}>
                     Recent Posts
@@ -31,10 +37,9 @@ export default function IndexPage(sortedPost) {
                         <IndexPost key={sortedPosts.link} post={sortedPosts} />
                     ))}
                 </Grid>
-            </div>
-
-            <div sx={{ maxWidth: '70%', ml: 'auto', mr: 'auto' }}>
-                <Footer />
+                <div sx={{ maxWidth: '100%', ml: 'auto', mr: 'auto' }}>
+                    <Footer />
+                </div>
             </div>
         </div>
     )

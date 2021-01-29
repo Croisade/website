@@ -117,11 +117,9 @@ export default function About() {
                         </Box>
                     </Grid>
                 </Flex>
-            </div>
-            <br />
-            <br />
-            <div sx={{ maxWidth: '70%', ml: 'auto', mr: 'auto' }}>
-                <Footer />
+                <div sx={{ maxWidth: '100%', ml: 'auto', mr: 'auto' }}>
+                    <Footer />
+                </div>
             </div>
         </div>
     )

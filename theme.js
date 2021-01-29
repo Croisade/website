@@ -31,6 +31,13 @@ const theme = {
             cursor: 'pointer',
             fontWeight: 'bold'
         },
+        nav: {
+            ml: 3,
+            py: 2,
+            fontWeight: 'bold',
+            cursor: 'pointer',
+            textDecoration: 'none'
+        },
         hr: {
             color: 'primary',
             width: '30%',
@@ -50,7 +57,7 @@ const theme = {
         }
     },
     buttons: {
-        primary: {
+        muted: {
             color: 'background',
             bg: 'muted'
         }
@@ -61,6 +68,11 @@ const theme = {
             width: 48,
             height: 48,
             borderRadius: 99999
+        }
+    },
+    links: {
+        bold: {
+            fontWeight: 'bold'
         }
     }
 }

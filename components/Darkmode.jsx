@@ -6,7 +6,9 @@ const Dark = () => {
     const [colorMode, setColorMode] = useColorMode()
     return (
         <div>
-            <Button onClick={() => setColorMode(colorMode === 'default' ? 'dark' : 'default')}>
+            <Button
+                variant="muted"
+                onClick={() => setColorMode(colorMode === 'default' ? 'dark' : 'default')}>
                 {colorMode === 'dark' ? (
                     <span role="img" aria-label="moon">
                         🌑

@@ -11,7 +11,7 @@ export default async (_, res) => {
         },
         scopes: ['https://www.googleapis.com/auth/youtube.readonly']
     })
-    console.log(googleAuth)
+
     const youtube = google.youtube({
         auth: googleAuth,
         version: 'v3'

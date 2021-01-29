@@ -48,8 +48,7 @@ export default function Home(sortedPost) {
                 <div sx={{ mt: 5 }}>
                     <RecentThree />
                 </div>
-            </div>
-            <div sx={{ maxWidth: '70%', ml: 'auto', mr: 'auto' }}>
+
                 <Footer />
             </div>
         </div>
