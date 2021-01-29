@@ -2,14 +2,14 @@
 import { jsx, Text, Heading, Grid } from 'theme-ui'
 import RecentThree from '../components/RecentThree'
 import Banner from '../components/Banner'
-import BlogCard from '../components/BlogCard'
+import Footer from '../components/Footer'
 import Head from 'next/head'
 import sortBy from 'lodash/sortBy'
 import reverse from 'lodash/reverse'
 import map from 'lodash/map'
 import { posts } from '../utils/getAllPosts'
 
-//@todo include meta description for header, throw props into RecentThree
+//todo include meta description for header, throw props into RecentThree
 export default function Home(sortedPost) {
     const { sortedPost: post } = sortedPost
     return (
@@ -48,6 +48,8 @@ export default function Home(sortedPost) {
                 <div sx={{ mt: 5 }}>
                     <RecentThree />
                 </div>
+
+                <Footer />
             </div>
         </div>
     )
