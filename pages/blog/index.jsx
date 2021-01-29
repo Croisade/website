@@ -7,6 +7,7 @@ import sortBy from 'lodash/sortBy'
 import reverse from 'lodash/reverse'
 import map from 'lodash/map'
 import Head from 'next/head'
+import Footer from '../../components/Footer'
 
 // @todo refactor, implement search
 export default function IndexPage(sortedPost) {
@@ -20,7 +21,13 @@ export default function IndexPage(sortedPost) {
                 <title>{'Blog - The Life Of Jamal'}</title>
             </Head>
             <Banner />
-            <div sx={{ maxWidth: '40%', ml: 'auto', mr: 'auto' }}>
+            <div
+                sx={{
+                    height: `calc(100vh - 120px)`,
+                    maxWidth: ['80%', '50%'],
+                    ml: 'auto',
+                    mr: 'auto'
+                }}>
                 <Heading as="h1">Blog</Heading>
                 <Heading as="h2" sx={{ mt: '3', mb: '2' }}>
                     Recent Posts
@@ -30,6 +37,9 @@ export default function IndexPage(sortedPost) {
                         <IndexPost key={sortedPosts.link} post={sortedPosts} />
                     ))}
                 </Grid>
+                <div sx={{ maxWidth: '100%', ml: 'auto', mr: 'auto' }}>
+                    <Footer />
+                </div>
             </div>
         </div>
     )

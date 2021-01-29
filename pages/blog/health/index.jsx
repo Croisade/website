@@ -3,6 +3,7 @@ import { jsx } from 'theme-ui'
 import { IndexPost } from '../../../components/IndexPost'
 import { posts } from '../../../utils/getHealthPosts'
 import { Grid } from 'theme-ui'
+import Footer from '../../../components/Footer'
 
 export default function IndexPage() {
     return (
@@ -13,6 +14,7 @@ export default function IndexPage() {
                     <IndexPost key={post.link} post={post} />
                 ))}
             </Grid>
+            <Footer />
         </div>
     )
 }

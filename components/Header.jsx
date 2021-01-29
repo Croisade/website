@@ -8,7 +8,7 @@ const Header = () => {
     return (
         <header
             sx={{
-                bg: 'primary',
+                bg: 'muted',
                 borderBottom: '1px solid',
                 borderColor: 'primary'
             }}>
@@ -26,7 +26,6 @@ const Header = () => {
                             fontSize: 4,
                             py: 2,
                             fontWeight: 'bold',
-                            color: '#fff',
                             cursor: 'pointer'
                         }}>
                         TLOJ

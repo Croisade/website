@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Newsletter from './Newsletter'
 import Banner from './Banner'
 import RecentTen from './RecentTen'
+import Footer from './Footer'
 
 //@todo breadcrumbs
 export default function BlogLayout({ meta, children }) {
@@ -30,6 +31,9 @@ export default function BlogLayout({ meta, children }) {
                                 </Grid>
                             </Box>
                         </Grid>
+                        <div sx={{ maxWidth: '80%', ml: 'auto', mr: 'auto' }}>
+                            <Footer />
+                        </div>
                     </div>
                 </div>
             </main>
