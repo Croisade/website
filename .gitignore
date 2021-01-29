@@ -19,8 +19,6 @@
 .DS_Store
 *.pem
 static/*
-blog/*
-public/*
 images/*
 
 # debug
