@@ -6,10 +6,8 @@ const Dark = () => {
     const [colorMode, setColorMode] = useColorMode()
     return (
         <div>
-            <Button
-                sx={{ color: 'primary' }}
-                onClick={() => setColorMode(colorMode === 'default' ? 'dark' : 'default')}>
-                {colorMode === 'default' ? (
+            <Button onClick={() => setColorMode(colorMode === 'default' ? 'dark' : 'default')}>
+                {colorMode === 'dark' ? (
                     <span role="img" aria-label="moon">
                         🌑
                     </span>

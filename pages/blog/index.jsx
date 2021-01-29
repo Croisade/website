@@ -7,6 +7,7 @@ import sortBy from 'lodash/sortBy'
 import reverse from 'lodash/reverse'
 import map from 'lodash/map'
 import Head from 'next/head'
+import Footer from '../../components/Footer'
 
 // @todo refactor, implement search
 export default function IndexPage(sortedPost) {
@@ -30,6 +31,10 @@ export default function IndexPage(sortedPost) {
                         <IndexPost key={sortedPosts.link} post={sortedPosts} />
                     ))}
                 </Grid>
+            </div>
+
+            <div sx={{ maxWidth: '70%', ml: 'auto', mr: 'auto' }}>
+                <Footer />
             </div>
         </div>
     )

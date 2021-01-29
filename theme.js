@@ -1,4 +1,4 @@
-import { tailwind, dark, deep } from '@theme-ui/presets'
+import { tailwind, dark } from '@theme-ui/presets'
 
 const theme = {
     ...tailwind,
@@ -23,13 +23,12 @@ const theme = {
             width: '100%',
             m: 0,
             mx: 'auto',
-            bg: 'primary'
+            bg: 'muted'
         },
         navlink: {
             ml: 3,
             py: 2,
             cursor: 'pointer',
-            color: '#fff',
             fontWeight: 'bold'
         },
         hr: {
@@ -48,6 +47,12 @@ const theme = {
                 ...dark.colors,
                 index: '#9ea1a3'
             }
+        }
+    },
+    buttons: {
+        primary: {
+            color: 'background',
+            bg: 'muted'
         }
     },
     images: {
