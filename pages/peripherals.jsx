@@ -1,7 +1,5 @@
 /** @jsx jsx */
-import { jsx, Text, Heading, Grid, Box, Flex } from 'theme-ui'
-import Image from 'next/image'
-import Link from 'next/link'
+import { jsx, Heading, Box } from 'theme-ui'
 import Head from 'next/head'
 import Banner from '../components/Banner'
 import Footer from '../components/Footer'
@@ -15,6 +13,16 @@ export default function Peripherals() {
                 ml: 'auto',
                 mr: 'auto'
             }}>
+            <Head>
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta charSet="utf-8" />
+                <meta
+                    name="Description"
+                    content={
+                        'Here you can find all of my peripherals I use on the day to day'
+                    }></meta>
+                <title>{'Peripherals - The Life Of Jamal'}</title>
+            </Head>
             <Banner />
             <Heading as="h1">Peripherals</Heading>
             <br />
