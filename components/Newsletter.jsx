@@ -22,7 +22,7 @@ export const Newsletter = () => {
             <div sx={{ ml: 3, mr: 3, mt: 2, mb: 2 }}>
                 <Flex sx={{ justifyContent: 'center' }}>
                     <Image
-                        src="/../public/JamalLogo.png"
+                        src="https://cdn1.thelifeofjamal.com/public/JamalLogo.png"
                         alt="Picture of the author"
                         width={150}
                         height={200}
