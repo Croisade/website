@@ -17,7 +17,11 @@ export default function Home(sortedPost) {
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta charSet="utf-8" />
-                <meta name="Description" content={''}></meta>
+                <meta
+                    name="Description"
+                    content={
+                        'I am a developer, content creator and a learner of all things. Welcome to my website where I keep all of my thoughts and opinions. Everything you want to know and more, is here.'
+                    }></meta>
                 <title>{'The Life Of Jamal'}</title>
             </Head>
             <Banner />
