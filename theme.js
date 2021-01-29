@@ -38,6 +38,12 @@ const theme = {
             cursor: 'pointer',
             textDecoration: 'none'
         },
+        navBullet: {
+            ml: 3,
+            py: 2,
+            cursor: 'pointer',
+            textDecoration: 'none'
+        },
         hr: {
             color: 'primary',
             width: '30%',
