@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, Grid, Box, Link } from 'theme-ui'
-// import Link from 'next/link'
+import { jsx, Grid, Box } from 'theme-ui'
+import Link from 'next/link'
 import Dark from './Darkmode'
 
 //@todo implement dropdown on blog
@@ -61,18 +61,19 @@ const Header = () => {
                             alignItems: 'center',
                             justifyContent: 'center'
                         }}>
-                        <Link
-                            to="/"
-                            sx={{
-                                variant: 'styles.navlink',
-                                px: 3,
-                                py: 1,
-                                textTransform: 'uppercase',
-                                letterSpacing: '0.1em',
-                                fontSize: 4,
-                                color: 'text'
-                            }}>
-                            TLOJ
+                        <Link href="/">
+                            <a
+                                sx={{
+                                    variant: 'styles.navlink',
+                                    px: 3,
+                                    py: 1,
+                                    textTransform: 'uppercase',
+                                    letterSpacing: '0.1em',
+                                    fontSize: 4,
+                                    color: 'text'
+                                }}>
+                                TLOJ
+                            </a>
                         </Link>
                     </div>
                     <div
@@ -81,23 +82,25 @@ const Header = () => {
                             alignItems: 'center',
                             justifyContent: 'flex-end'
                         }}>
-                        <Link
-                            to="/blog"
-                            sx={{
-                                variant: 'styles.navlink',
-                                ml: 3,
-                                py: 3
-                            }}>
-                            Blog
+                        <Link href="/blog">
+                            <a
+                                sx={{
+                                    variant: 'styles.navlink',
+                                    ml: 3,
+                                    py: 3
+                                }}>
+                                Blog
+                            </a>
                         </Link>
-                        <Link
-                            to="/about"
-                            sx={{
-                                variant: 'styles.navlink',
-                                ml: 3,
-                                py: 3
-                            }}>
-                            About
+                        <Link href="/about">
+                            <a
+                                sx={{
+                                    variant: 'styles.navlink',
+                                    ml: 3,
+                                    py: 3
+                                }}>
+                                About
+                            </a>
                         </Link>
                         <Dark />
                     </div>
