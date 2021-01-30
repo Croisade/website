@@ -37,7 +37,7 @@ const theme = {
             }
         },
         nav: {
-            ml: 3,
+            ml: 1,
             py: 2,
             fontWeight: 'bold',
             cursor: 'pointer',
@@ -78,6 +78,10 @@ const theme = {
         muted: {
             color: 'background',
             bg: 'muted'
+        },
+        secondary: {
+            color: 'background',
+            bg: 'secondary'
         }
     },
     images: {
