@@ -5,7 +5,7 @@ import { Button, useColorMode } from 'theme-ui'
 const Dark = () => {
     const [colorMode, setColorMode] = useColorMode()
     return (
-        <div>
+        <div sx={{ display: 'inline' }}>
             <Button
                 variant="muted"
                 onClick={() => setColorMode(colorMode === 'default' ? 'dark' : 'default')}>

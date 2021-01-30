@@ -29,20 +29,32 @@ const theme = {
             ml: 3,
             py: 2,
             cursor: 'pointer',
-            fontWeight: 'bold'
+            fontWeight: 'bold',
+            color: 'text',
+            textDecoration: 'none',
+            ':hover': {
+                color: 'primary'
+            }
         },
         nav: {
-            ml: 3,
+            ml: 1,
             py: 2,
             fontWeight: 'bold',
             cursor: 'pointer',
-            textDecoration: 'none'
+            textDecoration: 'none',
+            color: 'text',
+            ':hover': {
+                color: 'primary'
+            }
         },
         navBullet: {
             ml: 3,
             py: 2,
             cursor: 'pointer',
-            textDecoration: 'none'
+            textDecoration: 'none',
+            ':hover': {
+                color: 'primary'
+            }
         },
         hr: {
             color: 'primary',
@@ -66,6 +78,10 @@ const theme = {
         muted: {
             color: 'background',
             bg: 'muted'
+        },
+        secondary: {
+            color: 'background',
+            bg: 'secondary'
         }
     },
     images: {

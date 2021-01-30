@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Grid, Heading } from 'theme-ui'
+import { jsx, Grid, Heading, Box } from 'theme-ui'
 import { IndexPost } from '../../components/IndexPost'
 import Banner from '../../components/Banner'
 import { posts } from '../../utils/getAllPosts'
@@ -7,9 +7,10 @@ import sortBy from 'lodash/sortBy'
 import reverse from 'lodash/reverse'
 import map from 'lodash/map'
 import Head from 'next/head'
+import Link from 'next/link'
 import Footer from '../../components/Footer'
 
-// @todo refactor, implement search
+//todo: refactor, implement search
 export default function IndexPage(sortedPost) {
     const { sortedPost: post } = sortedPost
     return (
@@ -29,6 +30,30 @@ export default function IndexPage(sortedPost) {
                     mr: 'auto'
                 }}>
                 <Heading as="h1">Blog</Heading>
+                <Heading as="h2" sx={{ mt: '3', mb: '2' }}>
+                    Categories
+                </Heading>
+                <br />
+                <Grid gap={2} columns={[3, null, 3]} sx={{ justifyContent: 'center', mt: '10' }}>
+                    <Box>
+                        <Link href="/blog/politics">
+                            <a sx={{ variant: 'styles.nav' }}>Politics</a>
+                        </Link>
+                    </Box>
+                    <Box>
+                        <Link href="/blog/health">
+                            <a sx={{ variant: 'styles.nav' }}>Health</a>
+                        </Link>
+                    </Box>
+
+                    <Box>
+                        <Link href="/blog/technology">
+                            <a sx={{ variant: 'styles.nav' }}>Technology</a>
+                        </Link>
+                    </Box>
+                </Grid>
+                <br />
+                <hr />
                 <Heading as="h2" sx={{ mt: '3', mb: '2' }}>
                     Recent Posts
                 </Heading>
