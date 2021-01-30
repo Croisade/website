@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Text, Heading, Grid } from 'theme-ui'
+import { jsx, Text, Heading } from 'theme-ui'
 import RecentThree from '../components/RecentThree'
 import Banner from '../components/Banner'
 import Footer from '../components/Footer'
@@ -41,7 +41,8 @@ export default function Home(sortedPost) {
                     website where I keep all of my thoughts and opinions. Everything you want to
                     know and more, is here.
                 </Text>
-
+                <br />
+                <hr />
                 {/* <div sx={{ mt: 5 }}>
                     <Grid gap={3} columns={[1, null, 3]}>
                         {post.map((sortedPosts) => (
@@ -49,10 +50,9 @@ export default function Home(sortedPost) {
                         ))}
                     </Grid>
                 </div> */}
-                <div sx={{ mt: 5 }}>
+                <div sx={{ mt: 3 }}>
                     <RecentThree />
                 </div>
-
                 <Footer />
             </div>
         </div>
