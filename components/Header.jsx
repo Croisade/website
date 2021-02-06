@@ -3,8 +3,6 @@ import { jsx, Container } from 'theme-ui'
 import Link from 'next/link'
 import Dark from './Darkmode'
 
-//todo: implement dropdown on blog
-
 const Header = () => {
     return (
         <Container sx={{ bg: 'muted', borderBottom: '1px solid', borderColor: 'primary' }}>
