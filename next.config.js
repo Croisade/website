@@ -17,12 +17,7 @@ const withMDX = require('@next/mdx')({
 const mdx = withMDX({
     pageExtensions: ['js', 'jsx', 'mdx'],
     images: {
-        domains: [
-            'cdn1.thelifeofjamal.com',
-            'thelifeofjamal.com',
-            'www.ambitiouskitchen.com',
-            'i1.wp.com'
-        ]
+        domains: ['cdn1.thelifeofjamal.com', 'thelifeofjamal.com']
     }
 })
 

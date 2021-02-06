@@ -3,8 +3,6 @@ import { jsx, Container } from 'theme-ui'
 import Link from 'next/link'
 import Dark from './Darkmode'
 
-//todo: implement dropdown on blog
-
 const Header = () => {
     return (
         <Container sx={{ bg: 'muted', borderBottom: '1px solid', borderColor: 'primary' }}>
@@ -48,12 +46,17 @@ const Header = () => {
                                                 Health
                                             </a>
                                         </Link>
+                                        <Link href="/blog/life">
+                                            <a sx={{ variant: 'styles.nav', color: 'text' }}>
+                                                Life
+                                            </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </li>
                             <li sx={{ display: 'inline' }}>
                                 <a
-                                    href="https://www.amazon.com/s?rh=n%3A7141123011%2Cp_4%3ATLOJ-IT&ref=bl_sl_s_ap_web_7141123011"
+                                    href="https://www.amazon.com/s?rh=n%3A7141123011%2Cp_4%3ATLOJ&ref=bl_sl_s_ap_web_7141123011"
                                     sx={{ variant: 'styles.nav' }}>
                                     Merch
                                 </a>
