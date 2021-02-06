@@ -34,7 +34,7 @@ export default function IndexPage(sortedPost) {
                     Categories
                 </Heading>
                 <br />
-                <Grid gap={2} columns={[3, null, 3]} sx={{ justifyContent: 'center', mt: '10' }}>
+                <Grid gap={2} columns={[4, null, 4]} sx={{ justifyContent: 'center', mt: '10' }}>
                     <Box>
                         <Link href="/blog/politics">
                             <a sx={{ variant: 'styles.nav' }}>Politics</a>
@@ -49,6 +49,11 @@ export default function IndexPage(sortedPost) {
                     <Box>
                         <Link href="/blog/technology">
                             <a sx={{ variant: 'styles.nav' }}>Technology</a>
+                        </Link>
+                    </Box>
+                    <Box>
+                        <Link href="/blog/life">
+                            <a sx={{ variant: 'styles.nav' }}>Life</a>
                         </Link>
                     </Box>
                 </Grid>
