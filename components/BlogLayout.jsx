@@ -6,7 +6,7 @@ import Banner from './Banner'
 import RecentTen from './RecentTen'
 import Footer from './Footer'
 
-//@todo breadcrumbs
+//todo: breadcrumbs
 export default function BlogLayout({ meta, children }) {
     return (
         <div>
@@ -19,12 +19,12 @@ export default function BlogLayout({ meta, children }) {
             <main>
                 <div sx={{ height: `calc(100vh - 120px)` }}>
                     <Banner />
-                    <div sx={{ maxWidth: '70%', ml: 'auto', mr: 'auto' }}>
+                    <div sx={{ maxWidth: '70%', ml: 'auto', mr: 'auto', pr: '5' }}>
                         <Grid gap={2} columns={[1, null, 2, '2.5fr 1fr']}>
                             <Box>
                                 <div className="content">{children}</div>
                             </Box>
-                            <Box>
+                            <Box sx={{ ml: '4' }}>
                                 <Grid gap={2} columns={[1, null, 1]}>
                                     <Newsletter />
                                     <RecentTen />

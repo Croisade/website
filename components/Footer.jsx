@@ -129,7 +129,7 @@ const Footer = () => {
                             <Box>
                                 <Flex sx={{ justifyContent: 'center' }}>
                                     <a
-                                        href="https://www.amazon.com/s?rh=n%3A7141123011%2Cp_4%3ATLOJ-IT&ref=bl_sl_s_ap_web_7141123011"
+                                        href="https://www.amazon.com/s?rh=n%3A7141123011%2Cp_4%3ATLOJ&ref=bl_sl_s_ap_web_7141123011"
                                         target="_blank"
                                         rel="noreferrer"
                                         sx={{

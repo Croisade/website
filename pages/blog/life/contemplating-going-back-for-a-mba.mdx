@@ -1,0 +1,21 @@
+import Image from 'next/image'
+import BlogLayout from '../../../components/BlogLayout'
+
+export const meta = {
+    date: 'February 3, 2021',
+    description: `Lately I have been thinking about returning to school to pick up a master's degree. I need to do some thinking about which degree it will be but I am leaning heavily towards an MBA`,
+   image: 'https://cdn1.thelifeofjamal.com/public/floridaBeaches.jpg',
+    title: 'Contemplating Going Back for a MBA',
+    readTime: 5
+}
+
+# Contemplating Going Back for a MBA
+
+Lately I have been thinking about returning to school to pick up a master's degree. I need to do some thinking about which degree it will be but I am leaning heavily towards an MBA. Why an MBA, you might ask? I currently have a bachelors in Management Information Systems which is a business degree. If I go back to the school I graduated from I will meet all of the requirements and will not have to take any extra classes. Even though my blog and my brand is primarily focused around technology I do have a passion for business. I've tried to start two e-commerce business back when I was in school and the revenue I made from them actually helped to pay off some of my tuition.
+
+I have also considered getting a master's in computer science since it's more in line with my career field but I wonder how difficult that would be for someone like me and my background. Also, is a computer science degree even valuable to employers? Another question I have is would it be better for my to get a bachelor's in cs instead? These are some of the questions I will need to research before I make a decision. Sometimes I need to remind myself that I only graduated two years ago and that I need to take it slow and find out what I want to do by exploring everything first. I would hate to run into the situation where I choose a program and then somewhere along the line I make a career change and find myself wishing I had chosen something more relevant. Something general like a MBA will always be useful though.
+
+Getting a position as a web developer has been a huge opportunity for me. It allowed me to get experience in a field that I genuinely enjoy. Looking to advance my career through higher education will be on my mind for a while. I will keep you guy's posted on what I decide to do.
+
+
+export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout>
