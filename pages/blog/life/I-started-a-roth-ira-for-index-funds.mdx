@@ -1,0 +1,44 @@
+import Image from 'next/image'
+import BlogLayout from '../../../components/BlogLayout'
+
+export const meta = {
+    date: 'February 25, 2021',
+    description:
+        'I have started a Roth IRA on Vanguard and purchased some index funds. Before I get into what I did and my rationale, I want to preface by saying that I am not a financial advisor, do not take any advice from me. I quite literally know nothing and I am figuring this stuff out myself. I will misuse terminology and and butcher concepts. ',
+    image: undefined,
+    title: 'I Started A Roth IRA For Index Funds',
+    readTime: 3
+}
+
+# I Started A Roth IRA For Index Funds
+
+Hello everyone!
+
+I have exciting news. I have started a Roth IRA on Vanguard and purchased some index funds. Before I get into what I did and my rationale, I want to preface by saying that I am not a financial advisor, do not take any advice from me. I quite literally know nothing and I am figuring this stuff out myself. I will misuse terminology and and butcher concepts. If you're interested in learning about this topic I recommend you get in contact with a actual financial advisor and read some books.
+
+For books I recommend
+
+-   [The Bogleheads' Guide to Investing](https://amzn.to/3uzWUWO)
+-   [The Richest Man in Babylon](https://amzn.to/2NHiWqf)
+
+Having enough money for retirement is incredibly important to me. Many people do not save enough and end up paying for it later in life when they are not able to work. I believe everyone should be working in their youth to secure their future. That's not to say that you shouldn't enjoy your youth, but don't forget about your future self either. Ever since I paid off my student loans and got a new job I have had a excess of money that I had no idea what to do with. I do not have very many expenses as of yet and I had no real way of spending it so it would just sit in my savings account. One of the ideas I had was to get involved in real estate, but I don't plan to stay in this area after two or three years from now. Until I settle down in an area where I think I will be spending a considerable time in, I probably will not tackle real estate. If anyone has an argument on why this is a bad idea please send it my way. I could be rationalizing this wrong.
+
+I have a 401k, but I do not think this will be enough for me to live off of when I'm 65. I like to assume to worst. What is the worst case scenario for me to be in at 65. I could be unemployed, I could have no other income, and I could be homeless. My rationale is that if I build a plan for the worst possible outcome than any benefits I reap from a better outcome is just icing on the cake. So to help with this situation I started a Roth IRA with Vanguard. My Roth IRA is currently limited to 6 thousand a year. Which isn't bad, It's 6k that I can put in that won't have to sit in my savings account.
+
+I was convinced by [The Bogleheads' Guide to Investing](https://amzn.to/3uzWUWO) to create a Vanguard account. One of the reasons why they recommend Vanguard is for the very low expense fees. Currently the fee for the [Vanguard Total Stock Market Index Fund Admiral Shares](https://investor.vanguard.com/mutual-funds/profile/fees/vtsax) (VTSAX) is currently .04, which by my understanding is extremely low. These low fees are the reason why a lot of index funds outperform a lot of actively managed portfolios. I am entirely too busy to actively manage my positions, nor do I have enough time to learn how to do it. Index funds are incredibly attractive to me for this. I have a set and forget mentality.
+
+Using the method's espoused in the Boglehead book I plan to also purchase some bond index's. I have not done so yet but I currently am eyeing the [Vanguard Total Bond Market Index Fund Admiral Shares](https://investor.vanguard.com/mutual-funds/profile/overview/vbtlx) (VBTLX). My portfolio for the first year will be around 75/25.
+
+| Total Stock Market Index Fund | 75% |
+| ----------------------------- | --- |
+| Total Bond Market Index Fund  | 25% |
+
+Beginning of 2022 It'll start to look more like this.
+
+| Total Stock Market Index Fund | 80% |
+| ----------------------------- | --- |
+| Total Bond Market Index Fund  | 20% |
+
+Bogle recommends that you match the percentage of bonds to your age, but I would like to be a bit more aggressive with my portfolio. The reasoning is that as you approach retirement you can't be as risky with your income so you should start to look at bonds. Inflation protection securities(TIPS) are great against inflation. Maybe if I am still updating this blog 20 years in the future I'll have a post saying that I purchased some TIPS. Thanks for reading this. Subscribe to my newsletter for more and updates on future posts.
+
+export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout>
