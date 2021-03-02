@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Text, Heading } from 'theme-ui'
+import { jsx, Text, Heading, Button, Grid, Box } from 'theme-ui'
 import RecentThree from '../components/RecentThree'
 import Banner from '../components/Banner'
 import Footer from '../components/Footer'
@@ -7,6 +7,8 @@ import Head from 'next/head'
 import sortBy from 'lodash/sortBy'
 import reverse from 'lodash/reverse'
 import map from 'lodash/map'
+import Image from 'next/image'
+import Link from 'next/link'
 import { posts } from '../utils/getAllPosts'
 
 //todo include meta description for header, throw props into RecentThree
@@ -33,14 +35,33 @@ export default function Home(sortedPost) {
                     mr: 'auto'
                 }}>
                 <Heading as="h1">Home</Heading>
-                <Heading as="h2" sx={{ mt: '3' }}>
-                    Jamal Gardiner
-                </Heading>
-                <Text sx={{ mt: '2' }}>
-                    I am a developer, content creator and a learner of all things. Welcome to my
-                    website where I keep all of my thoughts and opinions. Everything you want to
-                    know and more, is here.
-                </Text>
+
+                <Grid gap={2} columns={[1, null, 2, '2.5fr 1fr']}>
+                    <Box sx={{ mt: '3' }}>
+                        <Heading as="h2" sx={{ mt: '4' }}>
+                            Jamal Gardiner
+                        </Heading>
+                        <Text sx={{ mt: '2' }}>
+                            Developer, content creator and a learner of all things. Welcome to my
+                            website where I keep all of my thoughts and opinions. Check back every
+                            once in a while to witness one man's quest to over engineer a website.
+                        </Text>
+                        <Link href="/about">
+                            <Button variant="secondary" sx={{ mt: '5' }}>
+                                Learn more about me
+                            </Button>
+                        </Link>
+                    </Box>
+                    <Box>
+                        <Image
+                            src="https://cdn1.thelifeofjamal.com/public/JamalLogo.png"
+                            alt="Picture of Jamal"
+                            width={225}
+                            height={300}
+                            priority
+                        />
+                    </Box>
+                </Grid>
                 <br />
                 <hr />
                 {/* <div sx={{ mt: 5 }}>
