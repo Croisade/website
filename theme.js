@@ -80,8 +80,11 @@ const theme = {
             bg: 'muted'
         },
         secondary: {
-            color: 'background',
-            bg: 'secondary'
+            color: 'muted',
+            bg: 'text',
+            '&:hover': {
+                bg: 'secondary'
+            }
         }
     },
     images: {
