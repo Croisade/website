@@ -1,0 +1,157 @@
+import BlogLayout from '../../../components/BlogLayout'
+
+export const meta = {
+    date: 'June 4th, 2021',
+    description:
+        'Chapter 12 from the Haskell from first principles book',
+    image: undefined,
+    title: 'Signaling Adversity (Haskell)',
+    readTime: 7
+}
+
+# Signaling Adversity
+
+These are my notes from learning Haskell. Purchase the Haskell from first principles book from [here](https://haskellbook.com/)
+
+## Maybe
+If there is ever a situation where you are looking for a specific type of data, or specific values you should use the maybe type constructor. The maybe type constructor allows you to almost "filter" for the data that you're looking for. For example. If I had a function that checks to see if a number is even and if it is even it does something with it. But if it's not, It'll return nothing because I do not care about this.
+
+```haskell
+returnEven :: Int -> Maybe Int
+returnEven n = if even n then Just(n + 2) else Nothing
+```
+
+Another issue we might run into is having types, but the types aren't constrained enough so bad data can still cause bugs. For example If we had a person type constructor that took name and age there is nothing in the type constructor that can prevent someone from having a empty string for a name, or a negative number for age. To get around this we use *smart constructors*. Smart constructors are just functions that help constrain the types only when they meet certain criteria. They tell us when they have valid data and return a explicit signal when they do not.
+
+```haskell
+type Name = String
+type Age = Integer
+
+data Person = Person Name Age deriving Show
+
+smartConstructor :: Name -> Age -> Maybe Person
+smartConstructor n a
+    | n /= "" && Age >= 0 = Just (Person n a)
+    | otherwise = Nothing
+```
+
+## Either
+
+Now what if we want to know if the age or the name is the one that's invalid. What do we do now? For this use case we have to use the Either type constructor. I was mistaken in thinking we could nest the Maybe in the Either but that's really not necessary here because we care to know what the error is, and I'm not even sure if what I was thinking is possible. We only use maybe if we do not care about the alternative data, but we use either when we do.
+
+```haskell
+type Name = String
+type Age = Integer
+
+data PersonInvalid = NameEmpty | AgeTooLow deriving (Show, Eq)
+data Person = Person Name Age deriving Show
+
+smartConstructor :: Name -> Age -> Either InvalidPerson | Person
+smartConstructor n a
+    | n /= "" && Age >= 0 = Right $ Person n a
+    | name == "" = Left NameEmpty
+    | otherwise = Left AgeTooLow
+```
+
+```haskell
+*Main> smartConstructor "Jamal" 25
+Right (Person "Jamal" 25)
+*Main> smartConstructor "" 25
+Left NameEmpty
+*Main> smartConstructor "Jamal" (-1)
+Left AgeTooLow
+*Main> smartConstructor "" (-1)
+Left NameEmpty
+```
+
+The problem here is that even if the age and name are invalid the only data we return back is NameEmpty. We can solve this by using a list.
+
+> Not Finished come back and figure this one out.
+
+```haskell
+type Name = String
+type Age = Integer
+type ValidatePerson a = Either [InvalidPerson] a
+
+data InvalidPerson = NameEmpty | AgeTooLow deriving (Show, Eq)
+data Person = Person Name Age deriving Show
+
+isValidAge :: Age -> Either [InvalidPerson] Age
+isValidAge age = if age >= 0 then Right age else Left [AgeTooLow]
+
+isValidName :: Name -> Either [InvalidPerson] Name
+isValidName name = if name == "" then Left [NameEmpty] else Right name
+
+smartConstructor :: Name -> Age -> ValidatePerson Person
+smartConstructor name age
+    | name /= "" && age >= 0 = Right $ Person name age
+    | otherwise = "???"
+```
+
+## Higher-kinded Types
+
+Like higher order functions but with types. High order functions is when you pass a function to a function. Higher Kinded types is when you pass a type to a type. Types that take no types are known as **type constants**. Types that must have types applied to it to become a concrete type are called **type constructors**.
+
+Examples of type constants:
+```haskell
+Prelude> :kind Int
+Int :: *
+Prelude> :k Bool
+Bool :: *
+Prelude> :k Char
+Char :: *
+```
+
+In short, any type with one asterisk is a type constant and a concrete type.
+
+Kinds with two asterisks are type constructors meaning they take another type
+
+```haskell
+Prelude> data Example a = Hooplah | Exile a
+Prelude> :k Example
+Example :: * -> *
+```
+
+Because Kinds like Either take more than one type it can be curried.
+```haskell
+Prelude> :k Either Int
+Either Int :: * -> *
+Prelude> :k Either Int String
+Either Int String :: *
+```
+A lifted type, which includes any datatype you could
+define yourself, is any that can be inhabited by bottom.
+
+Unlifted types are any types that cannot be inhabited
+by bottom
+
+### Data Constructors are functions
+
+nullary data constructors are not like functions. They take no inputs. So they do not behave like functions
+```haskell
+data Trivial = Trivial deriving Show
+
+Prelude> Trivial 1
+
+<interactive>:12:1: error:
+    • Couldn't match expected type ‘Integer -> t’
+                  with actual type ‘Trivial’
+    • The function ‘Trivial’ is applied to one argument,
+      but its type ‘Trivial’ has none
+      In the expression: Trivial 1
+      In an equation for ‘it’: it = Trivial 1
+    • Relevant bindings include it :: t (bound at <interactive>:12:1)
+```
+
+data constructors that do take inputs, behave like functions.
+```haskell
+data Person = Person String deriving Show
+
+Prelude> data Person = Person String deriving Show
+Prelude> :t Person
+Person :: String -> Person
+Prelude> :t Person "Jamal"
+Person "Jamal" :: Person
+```
+
+export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout>
