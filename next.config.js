@@ -11,7 +11,10 @@ const config = {
 }
 
 const withMDX = require('@next/mdx')({
-    extension: /\.mdx?$/
+    extension: /\.mdx?$/,
+    options: {
+        remarkPlugins: [require('remark-prism')]
+    }
 })
 
 const mdx = withMDX({
