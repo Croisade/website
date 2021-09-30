@@ -10,7 +10,7 @@ export default function IndexPage() {
     return (
         <div sx={{ maxWidth: '70%', ml: 'auto', mr: 'auto' }}>
             <Banner />
-            <h1>Politics</h1>
+            <h1>Life</h1>
             <Grid gap={3} columns={[1, null, 2]}>
                 {posts.map((post) => (
                     <IndexPost key={post.link} post={post} />
@@ -20,4 +20,3 @@ export default function IndexPage() {
         </div>
     )
 }
-
