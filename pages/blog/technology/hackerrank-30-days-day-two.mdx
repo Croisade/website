@@ -1,0 +1,75 @@
+import Image from 'next/image'
+import BlogLayout from '../../../components/BlogLayout'
+
+export const meta = {
+    date: 'October 1, 2021',
+    description:
+        'Documenting the solutions I propose for the hackrank 30 days of code',
+    image: '/hackerRank.png',
+    title: 'Day Two- HackerRank 30 days of code',
+    readTime: 2,
+    url: 'hackerrank-30-days-day-two'
+}
+
+
+<Image src={meta.image} alt="Hacker Rank" width={680} height={275} priority />
+
+# Day One - HackerRank 30 days of code
+
+I need different ways to practice my skills with Haskell so I thought the 30 days of code challenge from [HackerRank](https://www.hackerrank.com/dashboard) would be a good start.
+
+This was my first time dealing with IO in Haskell. I haven't gone over monads or IO much at this point and it took me a while to figure out what I can and can not do within a `do` syntax. If I want to bind a some data to a variable, the data has to have a IO context. In the case below read returns data within IO. Atleast this is how I understand it at this point and time as I write this blog post. The problem itself was straight forward. Calculate how much the bill would be for a meal after tip and tax. I dot think all of these imports are necessary but they are from the boilerplate code provided by hackerRank.
+
+## Solution
+
+```haskell
+{-# LANGUAGE DuplicateRecordFields, FlexibleInstances, UndecidableInstances #-}
+
+module Main where
+
+import Control.Monad
+import Data.Array
+import Data.Bits
+import Data.List
+import Data.List.Split
+import Data.Set
+import Data.Text
+import Debug.Trace
+import System.Environment
+import System.IO
+import System.IO.Unsafe
+import GHC.Float.RealFracMethods
+
+--
+-- Complete the 'solve' function below.
+--
+-- The function accepts following parameters:
+--  1. DOUBLE meal_cost
+--  2. INTEGER tip_percent
+--  3. INTEGER tax_percent
+--
+
+solve :: Double -> Int -> Int -> IO ()
+solve meal_cost tip_percent tax_percent = do
+    -- Write your code here
+    print (roundDoubleInt $ meal_cost + ((meal_cost / 100) * fromIntegral tip_percent) + ((fromIntegral tax_percent / 100) * meal_cost))
+
+
+lstrip = Data.Text.unpack . Data.Text.stripStart . Data.Text.pack
+rstrip = Data.Text.unpack . Data.Text.stripEnd . Data.Text.pack
+
+main :: IO()
+main = do
+    meal_costTemp <- getLine
+    let meal_cost = read $ lstrip $ rstrip meal_costTemp :: Double
+
+    tip_percentTemp <- getLine
+    let tip_percent = read $ lstrip $ rstrip tip_percentTemp :: Int
+
+    tax_percentTemp <- getLine
+    let tax_percent = read $ lstrip $ rstrip tax_percentTemp :: Int
+
+    solve meal_cost tip_percent tax_percent
+```
+
+export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout>
