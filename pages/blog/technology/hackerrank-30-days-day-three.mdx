@@ -1,0 +1,58 @@
+import Image from 'next/image'
+import BlogLayout from '../../../components/BlogLayout'
+
+export const meta = {
+    date: 'October 5, 2021',
+    description: 'Documenting the solutions I propose for the hackrank 30 days of code',
+    image: '/hackerRank.png',
+    title: 'Day Three - HackerRank 30 days of code',
+    readTime: 2,
+    url: 'hackerrank-30-days-day-three'
+}
+
+<Image src={meta.image} alt="Hacker Rank" width={680} height={275} priority />
+
+# Day Three - HackerRank 30 days of code
+
+I need different ways to practice my skills with Haskell so I thought the 30 days of code challenge from [HackerRank](https://www.hackerrank.com/dashboard) would be a good start.
+
+Simple solution implemented with guards. The dayThree function returns `IO ()`. Input/Output is becoming a bit easier for me to navigate, and websites like hoogle do a good job showing me what functions I can use that can interact with the IO type class.
+
+## Solution
+
+```haskell
+{-# LANGUAGE DuplicateRecordFields, FlexibleInstances, UndecidableInstances #-}
+
+module Main where
+
+import Control.Monad
+import Data.Array
+import Data.Bits
+import Data.List
+import Data.List.Split
+import Data.Set
+import Data.Text
+import Debug.Trace
+import System.Environment
+import System.IO
+import System.IO.Unsafe
+
+dayThree :: Int -> IO ()
+dayThree n
+    | even n && n > 20 = putStrLn "Not Weird"
+    | even n && n > 6 && n < 20 = putStrLn "Weird"
+    | even n && n > 2 && n < 5 = putStrLn "Not Weird"
+    | otherwise = putStrLn "Weird"
+
+lstrip = Data.Text.unpack . Data.Text.stripStart . Data.Text.pack
+rstrip = Data.Text.unpack . Data.Text.stripEnd . Data.Text.pack
+
+main :: IO()
+main = do
+    nTemp <- getLine
+    let n = read $ lstrip $ rstrip nTemp :: Int
+    dayThree n
+
+```
+
+export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout>
