@@ -1,0 +1,27 @@
+import Image from 'next/image'
+import BlogLayout from '../../../components/BlogLayout'
+
+export const meta = {
+    date: 'October 13, 2021',
+    description:
+        'Here is how you can make your vscode pick up on modules installed locally with stack',
+    image: undefined,
+    title: 'Haskell - VSCode Intellisense Could Not Find Module Fix',
+    readTime: 1,
+    url: 'haskell-vscode-intellisense-could-not-find-module-fix'
+}
+
+# Haskell - VSCode Intellisense Could Not Find Module Fix
+
+I assume you are here because your vscode intellisense is not picking on modules installed by stack. To fix this you need to use [Implicit hie](https://github.com/Avi-D-coder/implicit-hie). Here are the steps I followed to fix my issue
+
+In the root directory of your haskell project run
+
+```bash
+stack install implicit-hie
+gen-hie > hie.yaml
+```
+
+Reload file and everything should be good to go.
+
+export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout>
