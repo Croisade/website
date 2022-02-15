@@ -1,0 +1,28 @@
+import Image from 'next/image'
+import BlogLayout from '../../../components/BlogLayout'
+
+export const meta = {
+    date: 'February 15, 2022',
+    description:
+        'Recently I went in to get some blood work done since I haven not in over 3 years. I was shocked to see that I had high cholesterol.',
+    image: '/bloodWork.png',
+    title: 'Blood Work for the New Year',
+    readTime: 4,
+    url: 'blood-work-for-the-new-year'
+}
+
+
+
+# Blood work for the new year
+
+<Image src={meta.image} alt="Blood Work" width={1000} height={295} priority />
+
+Recently I went in to get some blood work done since I have not in over 3 years. I was shocked to see that I had high cholesterol. My cholesterol is sitting at 224 mg/DL and the standard range is 100-199 mg/dL and my LDL Cholesterol is at 165 mg/DL and the standard range for that is 0-99 mg/dL. It does not take a genius to see that this is a issue. But I was not surprised to see this result. Grubhub offered me grubhub + for 6 months for free, and my car was going through some troubles. This was like the perfect storm of circumstances to allow me to go crazy on fast food. I ate fast food everyday for 4 months. Chimichangas, burritos, burgers, tacos, cheesesteaks, chinese food. It got to the point where I would plan out my week ahead of time with what I was going to eat. I'd order chinese food on Mondays and order enough for two days. Order a chimichanga on Wednesday, and eat Taco Bell and KFC for Thursday, Friday.
+
+I am 5"5' and got up to around 160, the heaviest I have ever been in my life. Towards the last half of my fast food spree I started cutting back a little bit by eating one meal a day and managed to get down to around 146-150. But that didn't save my blood work from being abysmal. In January I started hitting the gym again, and earlier this month I started the couch 2 5k program that I found on Reddit. Currently on week two but I am hoping to stick with it. I plan to go back for another blood test in August so hopefully I will have an update to share by then.
+
+export default ({ children }) => (
+    <BlogLayout meta={meta} bg="muted">
+        {children}
+    </BlogLayout>
+)
