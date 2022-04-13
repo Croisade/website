@@ -8,11 +8,15 @@ import reverse from 'lodash/reverse'
 import slice from 'lodash/slice'
 import map from 'lodash/map'
 
+// @TODO get static paths and props for blog layout https://github.com/Hendrixer/production-grade-nextjs/blob/dev/pages/blog/%5Bslug%5D.tsx
+
 //@todo use lodash/fp to make more readable
 export default function RecentTen() {
     const deModuled = map(posts, function (o) {
         return { link: o.link, module: JSON.parse(JSON.stringify(o.module)) }
     })
+
+    console.log(deModuled)
     const sortedPost = slice(
         reverse(
             sortBy(deModuled, function (post) {

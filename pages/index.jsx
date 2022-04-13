@@ -3,17 +3,19 @@ import { jsx, Text, Heading, Button, Grid, Box } from 'theme-ui'
 import RecentThree from '../components/RecentThree'
 import Banner from '../components/Banner'
 import Footer from '../components/Footer'
+import path from 'path'
+import glob from 'glob'
+import fs from 'fs'
+import matter from 'gray-matter'
 import Head from 'next/head'
-import sortBy from 'lodash/sortBy'
-import reverse from 'lodash/reverse'
-import map from 'lodash/map'
 import Image from 'next/image'
 import Link from 'next/link'
-import { posts } from '../utils/getAllPosts'
+import sortBy from 'lodash/sortBy'
+import slice from 'lodash/slice'
+import reverse from 'lodash/reverse'
 
 //todo include meta description for header, throw props into RecentThree
-export default function Home(sortedPost) {
-    const { sortedPost: post } = sortedPost
+export default function Home({ posts }) {
     return (
         <div>
             <Head>
@@ -64,15 +66,8 @@ export default function Home(sortedPost) {
                 </Grid>
                 <br />
                 <hr />
-                {/* <div sx={{ mt: 5 }}>
-                    <Grid gap={3} columns={[1, null, 3]}>
-                        {post.map((sortedPosts) => (
-                            <BlogCard key={sortedPosts.link} post={sortedPosts} />
-                        ))}
-                    </Grid>
-                </div> */}
                 <div sx={{ mt: 3 }}>
-                    <RecentThree />
+                    <RecentThree posts={posts} />
                 </div>
                 <Footer />
             </div>
@@ -80,25 +75,27 @@ export default function Home(sortedPost) {
     )
 }
 
-export async function getStaticProps() {
-    const deModuled = map(posts, function (o) {
-        return { link: o.link, module: JSON.parse(JSON.stringify(o.module)) }
-    })
-    const sortedPost = reverse(
-        sortBy(deModuled, function (post) {
-            const {
-                module: {
-                    meta: { date }
-                }
-            } = post
-            const dateStr = date
-            return new Date(dateStr)
-        })
-    )
-
-    return {
-        props: {
-            sortedPost
-        }
+export function getStaticProps() {
+    const postsPath = path.join(process.cwd(), 'pages/blog')
+    const options = {
+        cwd: postsPath
     }
+    const globbedPosts = glob.sync('**/*.mdx', options)
+    function grabFiles(paths) {
+        return fs.readFileSync(path.join(postsPath, paths), 'utf-8')
+    }
+    const files = globbedPosts.map(grabFiles)
+    const metas = files.map((x) => {
+        const { data } = matter(x)
+        return data
+    })
+
+    const sorted = sortBy(metas, function (x) {
+        const { date } = x
+        return new Date(date)
+    })
+
+    const reversed = reverse(sorted)
+    const posts = slice(reversed, 0, 3)
+    return { props: { posts } }
 }
