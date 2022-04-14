@@ -8,7 +8,8 @@ import Footer from './Footer'
 import { NextSeo } from 'next-seo'
 
 //todo: breadcrumbs
-export default function BlogLayout({ meta, children }) {
+export default function BlogLayout(help) {
+    console.log('children', children)
     return (
         <div>
             <Head>
