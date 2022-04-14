@@ -158,7 +158,8 @@ v10.15.2
 
 - [ ] Port to TypeScript
 - [ ] Move all text fields to ./constants
-- [ ] Flesh out APIs connecting to Youtube/Google
+- [ ] Build out backend connecting to Youtube/Google
+- [ ] Github actions for build, test, deploy
 - [ ] Multi-language Support
     - [ ] Spanish
 
@@ -227,15 +228,15 @@ Use this space to list resources you find helpful and would like to give credit 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/Croisade/Website.svg?style=for-the-badge
-[contributors-url]: https://github.com/Croisade/Website/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Croisade/Website.svg?style=for-the-badge
-[forks-url]: https://github.com/Croisade/Website/network/members
-[stars-shield]: https://img.shields.io/github/stars/Croisade/Website.svg?style=for-the-badge
-[stars-url]: https://github.com/Croisade/Website/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Croisade/Website.svg?style=for-the-badge
-[issues-url]: https://github.com/Croisade/Website/issues
-[license-shield]: https://img.shields.io/github/license/Croisade/Website.svg?style=for-the-badge
-[license-url]: https://github.com/Croisade/Website/blob/master/LICENSE.txt
+[contributors-url]: https://github.com/Croisade/website/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Croisade/website.svg?style=for-the-badge
+[forks-url]: https://github.com/Croisade/website/network/members
+[stars-shield]: https://img.shields.io/github/stars/Croisade/website.svg?style=for-the-badge
+[stars-url]: https://github.com/Croisade/website/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Croisade/website.svg?style=for-the-badge
+[issues-url]: https://github.com/Croisade/website/issues
+[license-shield]: https://img.shields.io/github/license/Croisade/website.svg?style=for-the-badge
+[license-url]: https://github.com/Croisade/website/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/jamalgardiner/
 [product-screenshot]: public/website.jpg
