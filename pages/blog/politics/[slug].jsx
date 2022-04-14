@@ -83,15 +83,15 @@ export default function IndexPage({ source, posts }) {
 
 export function getStaticPaths() {
     const postsPath = path.join(process.cwd(), 'posts', 'politics')
-    const fileNames = fs.readdirSync(postsPath)
-    const filePosts = fileNames.map((name) => {
-        const fullPath = path.join(process.cwd(), 'posts', 'politics', name)
-        const file = fs.readFileSync(fullPath, 'utf-8')
-        const { data } = matter(file)
-        return data
-    })
+    const globbedPosts = glob.sync('**/*.mdx', { cwd: postsPath })
+    const paths = _.chain(globbedPosts)
+        .map((paths) => fs.readFileSync(path.join(postsPath, paths), 'utf-8'))
+        .map((x) => matter(x).data)
+        .map((x) => ({ params: { slug: x.url } }))
+        .value()
+
     return {
-        paths: filePosts.map((s) => ({ params: { slug: s.url } })),
+        paths,
         fallback: false
     }
 }

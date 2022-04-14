@@ -1,20 +1,15 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { IndexPost } from '../../../components/IndexPost'
-import { posts } from '../../../utils/getTechnologyPosts'
-import { Grid } from 'theme-ui'
-import Footer from '../../../components/Footer'
-import Banner from '../../../components/Banner'
-
-import path from 'path'
+import fs from 'fs'
 import glob from 'glob'
 import matter from 'gray-matter'
-import sortBy from 'lodash/sortBy'
-import slice from 'lodash/slice'
-import reverse from 'lodash/reverse'
-import fs from 'fs'
+import _ from 'lodash'
+import path from 'path'
+import { Grid, jsx } from 'theme-ui'
+import Banner from '../../../components/Banner'
+import Footer from '../../../components/Footer'
+import { IndexPost } from '../../../components/IndexPost'
 
-export default function IndexPage({posts}) {
+export default function IndexPage({ posts }) {
     return (
         <div sx={{ maxWidth: '70%', ml: 'auto', mr: 'auto' }}>
             <Banner />
@@ -30,26 +25,14 @@ export default function IndexPage({posts}) {
 }
 
 export function getStaticProps() {
-    const postsPath = path.join(process.cwd(), 'posts/technology')
-    const options = {
-        cwd: postsPath
-    }
-    const globbedPosts = glob.sync('**/*.mdx', options)
+    const allPostsPath = path.join(process.cwd(), 'posts/technology')
+    const globbedPosts = glob.sync('**/*.mdx', { cwd: allPostsPath })
+    const posts = _.chain(globbedPosts)
+        .map((paths) => fs.readFileSync(path.join(allPostsPath, paths), 'utf-8'))
+        .map((x) => matter(x).data)
+        .sortBy((x) => new Date(x.date))
+        .reverse()
+        .value()
 
-    function grabFiles(paths) {
-        return fs.readFileSync(path.join(postsPath, paths), 'utf-8')
-    }
-    const files = globbedPosts.map(grabFiles)
-    const metas = files.map((x) => {
-        const { data } = matter(x)
-        return data
-    })
-
-    const sorted = sortBy(metas, function (x) {
-        const { date } = x
-        return new Date(date)
-    })
-
-    const posts = reverse(sorted)
     return { props: { posts } }
 }
