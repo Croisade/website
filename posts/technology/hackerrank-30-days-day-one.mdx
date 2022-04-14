@@ -8,10 +8,7 @@ url: hackerrank-30-days-day-one
 root: /technology/
 ---
 
-import Image from 'next/image'
-import BlogLayout from '../../../components/BlogLayout'
-
-<Image src={meta.image} alt="Hacker Rank" width={680} height={275} priority />
+<Image src={image} alt="Hacker Rank" width={680} height={275} priority />
 
 # Day One - HackerRank 30 days of code
 
@@ -28,5 +25,3 @@ main = do
   putStrLn "Hello, World"
   putStrLn variable
 ```
-
-export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout>

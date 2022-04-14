@@ -8,10 +8,7 @@ url: hackerrank-30-days-day-two
 root: /technology/
 ---
 
-import Image from 'next/image'
-import BlogLayout from '../../../components/BlogLayout'
-
-<Image src={meta.image} alt="Hacker Rank" width={680} height={275} priority />
+<Image src={image} alt="Hacker Rank" width={680} height={275} priority />
 
 # Day Two - HackerRank 30 days of code
 
@@ -71,4 +68,3 @@ main = do
     solve meal_cost tip_percent tax_percent
 ```
 
-export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout>

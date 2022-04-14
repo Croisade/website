@@ -1,16 +1,15 @@
 /** @jsx jsx */
-import { jsx, Grid, Heading, Box } from 'theme-ui'
-import { IndexPost } from '../../components/IndexPost'
-import Banner from '../../components/Banner'
-import sortBy from 'lodash/sortBy'
-import reverse from 'lodash/reverse'
-import Head from 'next/head'
-import Link from 'next/link'
-import Footer from '../../components/Footer'
-import path from 'path'
+import fs from 'fs'
 import glob from 'glob'
 import matter from 'gray-matter'
-import fs from 'fs'
+import _ from 'lodash'
+import Head from 'next/head'
+import Link from 'next/link'
+import path from 'path'
+import { Box, Grid, Heading, jsx } from 'theme-ui'
+import Banner from '../../components/Banner'
+import Footer from '../../components/Footer'
+import { IndexPost } from '../../components/IndexPost'
 
 //@TODO implement search
 export default function IndexPage({posts}) {
@@ -77,26 +76,14 @@ export default function IndexPage({posts}) {
 }
 
 export function getStaticProps() {
-    const postsPath = path.join(process.cwd(), 'posts')
-    const options = {
-        cwd: postsPath
-    }
-    const globbedPosts = glob.sync('**/*.mdx', options)
-    function grabFiles(paths) {
-        return fs.readFileSync(path.join(postsPath, paths), 'utf-8')
-    }
-    const files = globbedPosts.map(grabFiles)
-    const metas = files.map((x) => {
-        const { data } = matter(x)
-        return data
-    })
+    const allPostsPath = path.join(process.cwd(), 'posts')
+    const globbedPosts = glob.sync('**/*.mdx', { cwd: allPostsPath })
+    const posts = _.chain(globbedPosts)
+        .map((paths) => fs.readFileSync(path.join(allPostsPath, paths), 'utf-8'))
+        .map((x) => matter(x).data)
+        .sortBy((x) => new Date(x.date))
+        .reverse()
+        .value()
 
-    const sorted = sortBy(metas, function (x) {
-        const { date } = x
-        return new Date(date)
-    })
-
-    const posts = reverse(sorted)
     return { props: { posts } }
 }
-

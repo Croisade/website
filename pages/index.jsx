@@ -1,20 +1,18 @@
 /** @jsx jsx */
-import { jsx, Text, Heading, Button, Grid, Box } from 'theme-ui'
-import RecentThree from '../components/RecentThree'
-import Banner from '../components/Banner'
-import Footer from '../components/Footer'
-import path from 'path'
-import glob from 'glob'
 import fs from 'fs'
+import glob from 'glob'
 import matter from 'gray-matter'
+import _ from 'lodash'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import sortBy from 'lodash/sortBy'
-import slice from 'lodash/slice'
-import reverse from 'lodash/reverse'
+import path from 'path'
+import { Box, Button, Grid, Heading, jsx, Text } from 'theme-ui'
+import Banner from '../components/Banner'
+import Footer from '../components/Footer'
+import RecentThree from '../components/RecentThree'
 
-//todo include meta description for header, throw props into RecentThree
+//@TODO include meta description for header
 export default function Home({ posts }) {
     return (
         <div>
@@ -76,26 +74,15 @@ export default function Home({ posts }) {
 }
 
 export function getStaticProps() {
-    const postsPath = path.join(process.cwd(), 'posts')
-    const options = {
-        cwd: postsPath
-    }
-    const globbedPosts = glob.sync('**/*.mdx', options)
-    function grabFiles(paths) {
-        return fs.readFileSync(path.join(postsPath, paths), 'utf-8')
-    }
-    const files = globbedPosts.map(grabFiles)
-    const metas = files.map((x) => {
-        const { data } = matter(x)
-        return data
-    })
+    const allPostsPath = path.join(process.cwd(), 'posts')
+    const globbedPosts = glob.sync('**/*.mdx', { cwd: allPostsPath })
+    const posts = _.chain(globbedPosts)
+        .map((paths) => fs.readFileSync(path.join(allPostsPath, paths), 'utf-8'))
+        .map((x) => matter(x).data)
+        .sortBy((x) => new Date(x.date))
+        .reverse()
+        .slice(0, 3)
+        .value()
 
-    const sorted = sortBy(metas, function (x) {
-        const { date } = x
-        return new Date(date)
-    })
-
-    const reversed = reverse(sorted)
-    const posts = slice(reversed, 0, 3)
     return { props: { posts } }
 }
