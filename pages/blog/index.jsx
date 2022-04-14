@@ -2,17 +2,18 @@
 import { jsx, Grid, Heading, Box } from 'theme-ui'
 import { IndexPost } from '../../components/IndexPost'
 import Banner from '../../components/Banner'
-import { posts } from '../../utils/getAllPosts'
 import sortBy from 'lodash/sortBy'
 import reverse from 'lodash/reverse'
-import map from 'lodash/map'
 import Head from 'next/head'
 import Link from 'next/link'
 import Footer from '../../components/Footer'
+import path from 'path'
+import glob from 'glob'
+import matter from 'gray-matter'
+import fs from 'fs'
 
-//todo: refactor, implement search
-export default function IndexPage(sortedPost) {
-    const { sortedPost: post } = sortedPost
+//@TODO implement search
+export default function IndexPage({posts}) {
     return (
         <div>
             <Head>
@@ -63,8 +64,8 @@ export default function IndexPage(sortedPost) {
                     Recent Posts
                 </Heading>
                 <Grid gap={3} columns={[1, null, 1]}>
-                    {post.map((sortedPosts) => (
-                        <IndexPost key={sortedPosts.link} post={sortedPosts} />
+                    {posts.map((post) => (
+                        <IndexPost key={post.link} data={post} />
                     ))}
                 </Grid>
                 <div sx={{ maxWidth: '100%', ml: 'auto', mr: 'auto' }}>
@@ -75,25 +76,27 @@ export default function IndexPage(sortedPost) {
     )
 }
 
-export async function getStaticProps() {
-    const deModuled = map(posts, function (o) {
-        return { link: o.link, module: JSON.parse(JSON.stringify(o.module)) }
-    })
-    const sortedPost = reverse(
-        sortBy(deModuled, function (post) {
-            const {
-                module: {
-                    meta: { date }
-                }
-            } = post
-            const dateStr = date
-            return new Date(dateStr)
-        })
-    )
-
-    return {
-        props: {
-            sortedPost
-        }
+export function getStaticProps() {
+    const postsPath = path.join(process.cwd(), 'posts')
+    const options = {
+        cwd: postsPath
     }
+    const globbedPosts = glob.sync('**/*.mdx', options)
+    function grabFiles(paths) {
+        return fs.readFileSync(path.join(postsPath, paths), 'utf-8')
+    }
+    const files = globbedPosts.map(grabFiles)
+    const metas = files.map((x) => {
+        const { data } = matter(x)
+        return data
+    })
+
+    const sorted = sortBy(metas, function (x) {
+        const { date } = x
+        return new Date(date)
+    })
+
+    const posts = reverse(sorted)
+    return { props: { posts } }
 }
+

@@ -9,7 +9,6 @@ import { NextSeo } from 'next-seo'
 
 //todo: breadcrumbs
 export default function BlogLayout(help) {
-    console.log('children', children)
     return (
         <div>
             <Head>
@@ -19,7 +18,6 @@ export default function BlogLayout(help) {
             </Head>
             <main>
                 <div sx={{ height: `calc(100vh - 120px)` }}>
-                    {console.log(meta)}
                     <NextSeo
                         title={meta.title}
                         description={meta.description}

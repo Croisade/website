@@ -11,11 +11,14 @@ import Banner from '../../../components/Banner'
 import RecentTen from '../../../components/RecentTen'
 import Footer from '../../../components/Footer'
 import { NextSeo } from 'next-seo'
+import Image from 'next/image'
 
 export default function IndexPage({ source }) {
     const {
         scope: { title, description, url, date, image }
     } = source
+
+    const components = { Image }
     return (
         <div>
             <Head>
@@ -25,7 +28,6 @@ export default function IndexPage({ source }) {
             </Head>
             <main>
                 <div sx={{ height: `calc(100vh - 120px)` }}>
-                    {console.log(source)}
                     <NextSeo
                         title={title}
                         description={description}
@@ -57,7 +59,7 @@ export default function IndexPage({ source }) {
                         <Grid gap={2} columns={[1, null, 2, '2.5fr 1fr']}>
                             <Box>
                                 <div className="content">
-                                    <MDXRemote {...source} />
+                                    <MDXRemote {...source} components={components}/>
                                 </div>
                             </Box>
                             <Box sx={{ ml: '4' }}>

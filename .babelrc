@@ -1,0 +1,11 @@
+{
+    "plugins": [
+        "inline-react-svg",
+        [
+            "@babel/plugin-transform-react-jsx",
+            {
+                "runtime": "classic"
+            }
+        ]
+    ]
+}
