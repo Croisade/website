@@ -76,7 +76,7 @@ export default function Home({ posts }) {
 }
 
 export function getStaticProps() {
-    const postsPath = path.join(process.cwd(), 'pages/blog')
+    const postsPath = path.join(process.cwd(), 'posts')
     const options = {
         cwd: postsPath
     }
