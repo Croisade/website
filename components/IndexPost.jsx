@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { HeadPost } from './HeadPost'
 
 export const IndexPost = ({ data }) => {
-    console.log(data)
     return (
         <div>
             <article>
