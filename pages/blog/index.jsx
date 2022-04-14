@@ -12,7 +12,7 @@ import Footer from '../../components/Footer'
 import { IndexPost } from '../../components/IndexPost'
 
 //@TODO implement search
-export default function IndexPage({posts}) {
+export default function IndexPage({ posts }) {
     return (
         <div>
             <Head>

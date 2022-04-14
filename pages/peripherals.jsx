@@ -37,7 +37,7 @@ export default function Peripherals() {
                 <a
                     href="https://amzn.to/36oCwhf"
                     sx={{ variant: 'styles.navBullet', p: 2, color: 'text' }}>
-                    Nvidia GEFORCE GTX 1070 Ti - FE Founder's Edition
+                    Nvidia GEFORCE GTX 1070 Ti - FE Founders Edition
                 </a>
             </Box>
             <Box>
