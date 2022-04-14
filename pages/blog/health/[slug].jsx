@@ -29,7 +29,6 @@ export default function IndexPage({ source }) {
             </Head>
             <main>
                 <div sx={{ height: `calc(100vh - 120px)` }}>
-                    {console.log(source)}
                     <NextSeo
                         title={title}
                         description={description}

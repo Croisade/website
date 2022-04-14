@@ -9,7 +9,6 @@ export const BlogCard = ({ post }) => {
         link,
         module: { meta }
     } = post
-    console.log(meta.image)
     return (
         <div>
             <Card

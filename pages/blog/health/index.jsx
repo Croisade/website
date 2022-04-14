@@ -50,7 +50,6 @@ export function getStaticProps() {
         return new Date(date)
     })
 
-    const reversed = reverse(sorted)
-    const posts = slice(reversed, 0, 3)
+    const posts = reverse(sorted)
     return { props: { posts } }
 }
