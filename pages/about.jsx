@@ -53,7 +53,7 @@ export default function About() {
                         <br />
                         <Text>
                             My first certification in Information Technology was the CompTIA A+ back
-                            in 2017. I went on to earn the Network+ and Security+ and a Bachelor's
+                            in 2017. I went on to earn the Network+ and Security+ and a Bachelors
                             degree in Management Information Systems by 2019. I landed my first job
                             as a service desk technician. I enjoyed my time in that position but I
                             wanted to keep learning to gain new skills. The job market changes as
@@ -64,7 +64,7 @@ export default function About() {
                             Now I am a backend web developer and I plan to use this website, and
                             other projects, to test out new technologies and further develop my
                             skills. You will occasionally find posts and updates related to other
-                            aspects of my life as well. Subscribe to my newsletter if you haven't so
+                            aspects of my life as well. Subscribe to my newsletter if you havent so
                             you can stay up to date.
                         </Text>
                         <br />

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Grid, Box, Text } from 'theme-ui'
-import useSWR, { mutate } from 'swr'
+import useSWR from 'swr'
 import fetch from 'unfetch'
 
 export default function Home() {

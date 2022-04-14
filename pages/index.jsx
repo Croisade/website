@@ -44,7 +44,7 @@ export default function Home({ posts }) {
                         <Text sx={{ mt: '2' }}>
                             Developer, content creator and a learner of all things. Welcome to my
                             website where I keep all of my thoughts and opinions. Check back every
-                            once in a while to witness one man's quest to over engineer a website.
+                            once in a while to witness one mans quest to over engineer a website.
                         </Text>
                         <Link href="/about">
                             <Button variant="secondary" sx={{ mt: '5' }}>
