@@ -30,11 +30,12 @@ export default function IndexPage({ posts }) {
 }
 
 export function getStaticProps() {
-    const postsPath = path.join(process.cwd(), 'pages/blog/health')
+    const postsPath = path.join(process.cwd(), 'posts/health')
     const options = {
         cwd: postsPath
     }
     const globbedPosts = glob.sync('**/*.mdx', options)
+
     function grabFiles(paths) {
         return fs.readFileSync(path.join(postsPath, paths), 'utf-8')
     }
