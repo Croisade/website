@@ -10,9 +10,6 @@ root: /technology/
 
 ---
 
-import Image from 'next/image'
-import BlogLayout from '../../../components/BlogLayout'
-
 # Haskell - VSCode Intellisense Could Not Find Module Fix
 
 I assume you are here because your vscode intellisense is not picking on modules installed by stack. To fix this you need to use [Implicit hie](https://github.com/Avi-D-coder/implicit-hie). Here are the steps I followed to fix my issue
@@ -26,4 +23,3 @@ gen-hie > hie.yaml
 
 Reload file and everything should be good to go.
 
-export default ({ children }) => <BlogLayout meta={meta}>{children}</BlogLayout>
