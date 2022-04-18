@@ -1,27 +1,25 @@
 /** @jsx jsx */
+import Banner from '@components/Banner'
+import Footer from '@components/Footer'
+import Newsletter from '@components/Newsletter'
+import RecentTen from '@components/RecentTen'
 import fs from 'fs'
-import matter from 'gray-matter'
-import path from 'path'
-import { serialize } from 'next-mdx-remote/serialize'
-import { MDXRemote } from 'next-mdx-remote'
-import { jsx, Box, Grid } from 'theme-ui'
-import Head from 'next/head'
-import Newsletter from '../../../components/Newsletter'
-import Banner from '../../../components/Banner'
-import RecentTen from '../../../components/RecentTen'
-import Footer from '../../../components/Footer'
-import { NextSeo } from 'next-seo'
-import Image from 'next/image'
 import glob from 'glob'
+import matter from 'gray-matter'
 import _ from 'lodash'
+import { MDXRemote } from 'next-mdx-remote'
+import { serialize } from 'next-mdx-remote/serialize'
+import { NextSeo } from 'next-seo'
+import Head from 'next/head'
+import Image from 'next/image'
+import path from 'path'
+import { Box, Grid, jsx } from 'theme-ui'
 
 export default function IndexPage({ source, posts }) {
     const {
         scope: { title, description, url, date, image }
     } = source
-
     const components = { Image }
-
     return (
         <div>
             <Head>
@@ -83,7 +81,7 @@ export default function IndexPage({ source, posts }) {
 }
 
 export function getStaticPaths() {
-    const postsPath = path.join(process.cwd(), 'posts', 'health')
+    const postsPath = path.join(process.cwd(), 'posts', 'life')
     const globbedPosts = glob.sync('**/*.mdx', { cwd: postsPath })
     const paths = _.chain(globbedPosts)
         .map((paths) => fs.readFileSync(path.join(postsPath, paths), 'utf-8'))
@@ -108,7 +106,7 @@ export async function getStaticProps({ params }) {
         .slice(0, 10)
         .value()
 
-    const postsPath = path.join(process.cwd(), 'posts', 'health', params.slug + '.mdx')
+    const postsPath = path.join(process.cwd(), 'posts', 'life', params.slug + '.mdx')
     const post = fs.readFileSync(postsPath, 'utf-8')
     const { content, data } = matter(post)
     const mdxSource = await serialize(content, { scope: data })

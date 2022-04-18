@@ -1,7 +1,6 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { Grid, Box, Text } from 'theme-ui'
 import useSWR from 'swr'
+import { Box, Grid, jsx, Text } from 'theme-ui'
 
 export default function Dashboard() {
     const fetcher = (...args) => fetch(...args).then((res) => res.json())

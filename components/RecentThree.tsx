@@ -1,8 +1,7 @@
 /** @jsx jsx */
-import { jsx, Heading } from 'theme-ui'
-import { IndexPost } from './IndexPost'
-import { Grid } from 'theme-ui'
 import map from 'lodash/map'
+import { Grid, Heading, jsx } from 'theme-ui'
+import { IndexPost } from '@components/IndexPost'
 
 export default function IndexPage({ posts }) {
     return (
