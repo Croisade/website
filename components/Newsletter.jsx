@@ -32,7 +32,8 @@ export const Newsletter = () => {
                     sx={{
                         fontSize: 2,
                         fontWeight: 'bold',
-                        textAlign: 'center'
+                        textAlign: 'center',
+                        display: 'block'
                     }}>
                     Ready to join the Coder Cafe?
                 </Text>
@@ -40,7 +41,8 @@ export const Newsletter = () => {
                     sx={{
                         fontSize: 1,
                         ml: 3,
-                        textAlign: 'center'
+                        textAlign: 'center',
+                        display: 'block'
                     }}>
                     Join our community for a weekly dose of my latest videos and articles.{' '}
                 </Text>

@@ -41,7 +41,7 @@ export default function Home({ posts }) {
                         <Heading as="h2" sx={{ mt: '4' }}>
                             Jamal Gardiner
                         </Heading>
-                        <Text sx={{ mt: '2' }}>
+                        <Text sx={{ mt: '2', display: 'block' }}>
                             Developer, content creator and a learner of all things. Welcome to my
                             website where I keep all of my thoughts and opinions. Check back every
                             once in a while to witness one mans quest to over engineer a website.
