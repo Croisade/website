@@ -1,9 +1,9 @@
 /** @jsxImportSource theme-ui */
-import React from 'react'
-import { Heading, Box } from 'theme-ui'
+import Banner from '@components/Banner'
+import Footer from '@components/Footer'
 import Head from 'next/head'
-import Banner from '../components/Banner'
-import Footer from '../components/Footer'
+import React from 'react'
+import { Box, Heading } from 'theme-ui'
 
 export default function Peripherals() {
     return (
