@@ -1,4 +1,7 @@
 /** @jsx jsx */
+import Banner from '@components/Banner'
+import Footer from '@components/Footer'
+import RecentThree from '@components/RecentThree'
 import fs from 'fs'
 import glob from 'glob'
 import matter from 'gray-matter'
@@ -8,9 +11,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import path from 'path'
 import { Box, Button, Grid, Heading, jsx, Text } from 'theme-ui'
-import Banner from '../components/Banner'
-import Footer from '../components/Footer'
-import RecentThree from '../components/RecentThree'
 
 //@TODO include meta description for header
 export default function Home({ posts }) {

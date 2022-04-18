@@ -1,14 +1,14 @@
 /** @jsx jsx */
-import { jsx, Text, Heading, Grid, Box, Flex } from 'theme-ui'
+import Banner from '@components/Banner'
+import Footer from '@components/Footer'
+import Facebook from '../public/facebook.svg'
+import GitHub from '../public/github.svg'
+import Instagram from '../public/instagram.svg'
+import Youtube from '../public/youtube.svg'
+import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import Head from 'next/head'
-import Banner from '../components/Banner'
-import Footer from '../components/Footer'
-import GitHub from '../public/github.svg'
-import Youtube from '../public/youtube.svg'
-import Instagram from '../public/instagram.svg'
-import Facebook from '../public/facebook.svg'
+import { Box, Flex, Grid, Heading, jsx, Text } from 'theme-ui'
 
 //todo: add headers and meta tags
 
@@ -38,20 +38,20 @@ export default function About() {
                     <Box>
                         <br />
                         <Heading as="h3">The Short</Heading>
-                        <Text>
+                        <Text sx={{ display: 'block' }}>
                             I am a developer, content creator and a learner of all things. Welcome
                             to my website where I keep all of my thoughts and opinions. Everything
                             you want to know and more, is here.
                         </Text>
                         <br />
                         <Heading as="h3">The Long</Heading>
-                        <Text>
+                        <Text sx={{ display: 'block' }}>
                             Born in Trinidad & Tobago, but grew up in the United States. I have
                             always had a passion for computers and technology and it is only
                             recently where I have began to explore it.
                         </Text>
                         <br />
-                        <Text>
+                        <Text sx={{ display: 'block' }}>
                             My first certification in Information Technology was the CompTIA A+ back
                             in 2017. I went on to earn the Network+ and Security+ and a Bachelors
                             degree in Management Information Systems by 2019. I landed my first job
@@ -60,7 +60,7 @@ export default function About() {
                             new technologies are released. If the markets change, I change.
                         </Text>
                         <br />
-                        <Text>
+                        <Text sx={{ display: 'block' }}>
                             Now I am a backend web developer and I plan to use this website, and
                             other projects, to test out new technologies and further develop my
                             skills. You will occasionally find posts and updates related to other
@@ -68,7 +68,7 @@ export default function About() {
                             you can stay up to date.
                         </Text>
                         <br />
-                        <Text>Remember, adapt to the market.</Text>
+                        <Text sx={{ display: 'block' }}>Remember, adapt to the market.</Text>
                     </Box>
                     <Box>
                         <Flex sx={{ justifyContent: 'center' }}>

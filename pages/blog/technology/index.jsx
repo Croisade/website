@@ -1,13 +1,13 @@
 /** @jsx jsx */
+import Banner from '@components/Banner'
+import Footer from '@components/Footer'
+import { IndexPost } from '@components/IndexPost'
 import fs from 'fs'
 import glob from 'glob'
 import matter from 'gray-matter'
 import _ from 'lodash'
 import path from 'path'
 import { Grid, jsx } from 'theme-ui'
-import Banner from '../../../components/Banner'
-import Footer from '../../../components/Footer'
-import { IndexPost } from '../../../components/IndexPost'
 
 export default function IndexPage({ posts }) {
     return (

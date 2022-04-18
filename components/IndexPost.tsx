@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
 import Link from 'next/link'
+import { jsx } from 'theme-ui'
 import { HeadPost } from './HeadPost'
 
 export const IndexPost = ({ data }) => {

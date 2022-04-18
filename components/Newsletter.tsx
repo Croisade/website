@@ -1,7 +1,6 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { Label, Input, Box, Button, Text, Flex } from 'theme-ui'
 import Image from 'next/image'
+import { Box, Button, Flex, Input, jsx, Label, Text } from 'theme-ui'
 
 export const Newsletter = () => {
     return (

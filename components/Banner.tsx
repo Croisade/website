@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx, Container } from 'theme-ui'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Container, jsx } from 'theme-ui'
 
 export const Banner = () => {
     return (
