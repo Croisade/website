@@ -1,5 +1,6 @@
-/** @jsx jsx */
-import { jsx, Heading, Box } from 'theme-ui'
+/** @jsxImportSource theme-ui */
+import React from 'react'
+import { Heading, Box } from 'theme-ui'
 import Head from 'next/head'
 import Banner from '../components/Banner'
 import Footer from '../components/Footer'

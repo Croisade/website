@@ -25,12 +25,16 @@ const theme = {
             mx: 'auto',
             bg: 'muted'
         },
-        navlink: {
+        hr: {
+            color: 'primary',
+            width: '30%',
+            mx: 'auto',
+            my: '3'
+        },
+        navBullet: {
             ml: 3,
             py: 2,
             cursor: 'pointer',
-            fontWeight: 'bold',
-            color: 'text',
             textDecoration: 'none',
             ':hover': {
                 color: 'primary'
@@ -47,30 +51,15 @@ const theme = {
                 color: 'primary'
             }
         },
-        navBullet: {
+        navlink: {
             ml: 3,
             py: 2,
             cursor: 'pointer',
+            fontWeight: 'bold',
+            color: 'text',
             textDecoration: 'none',
             ':hover': {
                 color: 'primary'
-            }
-        },
-        hr: {
-            color: 'primary',
-            width: '30%',
-            mx: 'auto',
-            my: '3'
-        }
-    },
-    colors: {
-        ...tailwind.colors,
-        muted: '#F6FCFF',
-        index: '#4c4f52',
-        modes: {
-            dark: {
-                ...dark.colors,
-                index: '#9ea1a3'
             }
         }
     },
@@ -87,6 +76,11 @@ const theme = {
             }
         }
     },
+    links: {
+        bold: {
+            fontWeight: 'bold'
+        }
+    },
     images: {
         ...tailwind.colors,
         avatar: {
@@ -95,9 +89,30 @@ const theme = {
             borderRadius: 99999
         }
     },
-    links: {
-        bold: {
-            fontWeight: 'bold'
+    colors: {
+        transparent: 'transparent',
+        black: '#000',
+        white: '#fff',
+        grayDark: '#2d3748',
+        text: '#2d3748',
+        background: '#fff',
+        primary: '#2b6cb0',
+        primaryHover: '#2c5282',
+        secondary: '#718096',
+        muted: '#F6FCFF',
+        success: '#9ae6b4',
+        info: '#63b3ed',
+        warning: '#faf089',
+        danger: '#feb2b2',
+        light: '#f7fafc',
+        dark: '#2d3748',
+        index: '#4c4f52',
+        textMuted: '#718096',
+        modes: {
+            dark: {
+                ...dark.colors,
+                index: '#9ea1a3'
+            }
         }
     }
 }
