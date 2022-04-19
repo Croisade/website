@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
-import Link from 'next/link'
-import { Container, jsx } from 'theme-ui'
 import Dark from '@components/Darkmode'
+import Link from 'next/link'
+import { Container } from 'theme-ui'
 
 const Header = () => {
     return (

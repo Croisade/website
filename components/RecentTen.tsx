@@ -1,5 +1,5 @@
 /** @jsxImportSource theme-ui */
-import { Grid, Heading, jsx } from 'theme-ui'
+import { Grid, Heading } from 'theme-ui'
 import SidePost from '@components/SidePost'
 
 export default function RecentTen({ data }) {

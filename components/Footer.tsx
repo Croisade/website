@@ -1,6 +1,6 @@
 /** @jsxImportSource theme-ui */
 import Link from 'next/link'
-import { Box, Flex, Grid, Heading, jsx, Text } from 'theme-ui'
+import { Box, Flex, Grid, Heading, Text } from 'theme-ui'
 
 const Footer = () => {
     return (

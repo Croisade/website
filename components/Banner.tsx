@@ -8,13 +8,8 @@ export const Banner = () => {
     return (
         <div sx={{ textAlign: 'center', cursor: 'pointer' }}>
             <Container p={4}>
-                <Link href="/">
-                    <Image
-                        src={IMAGES.banner}
-                        alt="The life of jamal banner logo"
-                        width={800}
-                        height={160}
-                    />
+                <Link href="/" passHref>
+                    <Image src={IMAGES.banner} alt={IMAGES.bannerAlt} width={800} height={160} />
                 </Link>
             </Container>
         </div>

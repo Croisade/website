@@ -3,17 +3,17 @@ import Banner from '@components/Banner'
 import Footer from '@components/Footer'
 import Newsletter from '@components/Newsletter'
 import RecentTen from '@components/RecentTen'
+import { SEO } from '@components/SEO'
 import fs from 'fs'
 import glob from 'glob'
 import matter from 'gray-matter'
 import _ from 'lodash'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
-import { NextSeo } from 'next-seo'
 import Head from 'next/head'
 import Image from 'next/image'
 import path from 'path'
-import { Box, Grid, jsx } from 'theme-ui'
+import { Box, Grid } from 'theme-ui'
 
 export default function IndexPage({ source, posts }) {
     const {
@@ -25,38 +25,13 @@ export default function IndexPage({ source, posts }) {
     return (
         <div>
             <Head>
-                <source name="viewport" content="width=device-width, initial-scale=1" />
-                <source charSet="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta charSet="utf-8" />
                 {/* Open Graph Protocol */}
+                <SEO title={title} description={description} url={url} image={image} date={date} />
             </Head>
             <main>
                 <div sx={{ height: `calc(100vh - 120px)` }}>
-                    <NextSeo
-                        title={title}
-                        description={description}
-                        author="Jamal Gardiner"
-                        openGraph={{
-                            site_name: 'thelifeofjamal',
-                            title: title,
-                            description: description,
-                            images: [{ url: image }],
-                            type: 'website',
-                            url: url,
-                            profile: { firstName: 'Jamal', lastName: 'Gardiner', gender: 'Male' },
-                            article: {
-                                publishedTime: new Date(date),
-                                authors: ['Jamal Gardiner']
-                            }
-                        }}
-                        twitter={{
-                            handle: '@GardinerJamal',
-                            site: 'thelifeofjamal',
-                            title: title,
-                            cardType: 'summary_large_image',
-                            image: image,
-                            description: description
-                        }}
-                    />
                     <Banner />
                     <div sx={{ maxWidth: '70%', ml: 'auto', mr: 'auto', pr: '5' }}>
                         <Grid gap={2} columns={[1, null, 2, '2.5fr 1fr']}>
