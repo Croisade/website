@@ -1,4 +1,4 @@
-/** @jsx jsx */
+/** @jsxImportSource theme-ui */
 import { Button, jsx, useColorMode } from 'theme-ui'
 
 const Dark = () => {

@@ -1,4 +1,4 @@
-/** @jsx jsx */
+/** @jsxImportSource theme-ui */
 import useSWR from 'swr'
 import { Box, Grid, jsx, Text } from 'theme-ui'
 

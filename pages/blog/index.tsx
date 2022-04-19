@@ -1,4 +1,4 @@
-/** @jsx jsx */
+/** @jsxImportSource theme-ui */
 import fs from 'fs'
 import glob from 'glob'
 import matter from 'gray-matter'

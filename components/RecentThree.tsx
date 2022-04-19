@@ -1,4 +1,4 @@
-/** @jsx jsx */
+/** @jsxImportSource theme-ui */
 import map from 'lodash/map'
 import { Grid, Heading, jsx } from 'theme-ui'
 import { IndexPost } from '@components/IndexPost'
