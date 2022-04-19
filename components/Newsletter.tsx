@@ -1,4 +1,4 @@
-/** @jsx jsx */
+/** @jsxImportSource theme-ui */
 import Image from 'next/image'
 import { Box, Button, Flex, Input, jsx, Label, Text } from 'theme-ui'
 
