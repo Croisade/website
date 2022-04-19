@@ -1,6 +1,6 @@
 /** @jsxImportSource theme-ui */
 import Link from 'next/link'
-import { Box, jsx } from 'theme-ui'
+import { Box } from 'theme-ui'
 
 export const SidePost = ({ post }) => {
     return (

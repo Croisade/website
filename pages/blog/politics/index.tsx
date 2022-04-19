@@ -7,7 +7,7 @@ import glob from 'glob'
 import matter from 'gray-matter'
 import _ from 'lodash'
 import path from 'path'
-import { Grid, jsx } from 'theme-ui'
+import { Grid } from 'theme-ui'
 
 export default function IndexPage({ posts }) {
     return (

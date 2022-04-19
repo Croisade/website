@@ -1,9 +1,9 @@
 /** @jsxImportSource theme-ui */
 import useSWR from 'swr'
-import { Box, Grid, jsx, Text } from 'theme-ui'
+import { Box, Grid, Text } from 'theme-ui'
 
 export default function Dashboard() {
-    const fetcher = (...args) => fetch(...args).then((res) => res.json())
+    const fetcher = (args) => fetch(args).then((res) => res.json())
     const { data, error } = useSWR('/api/youtube', fetcher)
 
     if (!data) return 'I am loading'

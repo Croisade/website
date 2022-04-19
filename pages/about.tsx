@@ -88,22 +88,24 @@ export default function About() {
                 <Flex sx={{ justifyContent: 'center' }}>
                     <Grid gap={3} columns={[4, null, 4, '50px 50px 50px 50px']}>
                         <Box>
-                            <Link href="https://github.com/Croisade">
+                            <Link href="https://github.com/Croisade" passHref>
                                 <Image src={GitHub} />
                             </Link>
                         </Box>
                         <Box>
-                            <Link href="https://www.youtube.com/channel/UCr8h9u258fq605akq_dGA1A?sub_confirmation=1">
+                            <Link
+                                href="https://www.youtube.com/channel/UCr8h9u258fq605akq_dGA1A?sub_confirmation=1"
+                                passHref>
                                 <Image src={Youtube} />
                             </Link>
                         </Box>
                         <Box>
-                            <Link href="https://www.instagram.com/the_life_of_jamal_/">
+                            <Link href="https://www.instagram.com/the_life_of_jamal_/" passHref>
                                 <Image src={Instagram} />
                             </Link>
                         </Box>
                         <Box>
-                            <Link href="https://www.facebook.com/YTJamalGardiner">
+                            <Link href="https://www.facebook.com/YTJamalGardiner" passHref>
                                 <Image src={Facebook} />
                             </Link>
                         </Box>

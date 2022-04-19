@@ -19,5 +19,6 @@ export const WEBSITE_INFORMATION = {
 
 export const IMAGES = {
     personalLogo: 'https://cdn1.thelifeofjamal.com/public/JamalLogo.png',
-    banner: 'https://cdn1.thelifeofjamal.com/banner.jpg'
+    banner: 'https://cdn1.thelifeofjamal.com/banner.jpg',
+    bannerAlt: 'The life of jamal banner logo'
 }
