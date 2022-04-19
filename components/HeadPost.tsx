@@ -1,4 +1,4 @@
-/** @jsx jsx */
+/** @jsxImportSource theme-ui */
 import { jsx, Text, Heading } from 'theme-ui'
 
 export const HeadPost = ({ data }) => {

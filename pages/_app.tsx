@@ -1,6 +1,6 @@
-/** @jsx jsx */
+/** @jsxImportSource theme-ui */
 import Header from '@components/Header'
-import { jsx, ThemeProvider } from 'theme-ui'
+import { ThemeProvider } from 'theme-ui'
 import '../styles/style.css'
 import theme from '../theme'
 

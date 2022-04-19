@@ -1,4 +1,4 @@
-/** @jsx jsx */
+/** @jsxImportSource theme-ui */
 import Banner from '@components/Banner'
 import Footer from '@components/Footer'
 import Facebook from '../public/facebook.svg'
@@ -8,7 +8,7 @@ import Youtube from '../public/youtube.svg'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Box, Flex, Grid, Heading, jsx, Text } from 'theme-ui'
+import { Box, Flex, Grid, Heading, Text } from 'theme-ui'
 
 //todo: add headers and meta tags
 
@@ -89,30 +89,22 @@ export default function About() {
                     <Grid gap={3} columns={[4, null, 4, '50px 50px 50px 50px']}>
                         <Box>
                             <Link href="https://github.com/Croisade">
-                                <a>
-                                    <GitHub sx={{ height: '50px', width: '50px' }} />
-                                </a>
+                                <Image src={GitHub} />
                             </Link>
                         </Box>
                         <Box>
                             <Link href="https://www.youtube.com/channel/UCr8h9u258fq605akq_dGA1A?sub_confirmation=1">
-                                <a>
-                                    <Youtube sx={{ height: '50px', width: '50px' }} />
-                                </a>
+                                <Image src={Youtube} />
                             </Link>
                         </Box>
                         <Box>
                             <Link href="https://www.instagram.com/the_life_of_jamal_/">
-                                <a>
-                                    <Instagram sx={{ height: '50px', width: '50px' }} />
-                                </a>
+                                <Image src={Instagram} />
                             </Link>
                         </Box>
                         <Box>
                             <Link href="https://www.facebook.com/YTJamalGardiner">
-                                <a>
-                                    <Facebook sx={{ height: '50px', width: '50px' }} />
-                                </a>
+                                <Image src={Facebook} />
                             </Link>
                         </Box>
                     </Grid>

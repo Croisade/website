@@ -1,7 +1,8 @@
-/** @jsx jsx */
+/** @jsxImportSource theme-ui */
 import Image from 'next/image'
 import Link from 'next/link'
-import { Container, jsx } from 'theme-ui'
+import { Container } from 'theme-ui'
+import { IMAGES } from '@constants'
 
 export const Banner = () => {
     return (
@@ -9,7 +10,7 @@ export const Banner = () => {
             <Container p={4}>
                 <Link href="/">
                     <Image
-                        src="https://cdn1.thelifeofjamal.com/banner.jpg"
+                        src={IMAGES.banner}
                         alt="The life of jamal banner logo"
                         width={800}
                         height={160}

@@ -1,4 +1,4 @@
-/** @jsx jsx */
+/** @jsxImportSource theme-ui */
 import Banner from '@components/Banner'
 import Footer from '@components/Footer'
 import { IndexPost } from '@components/IndexPost'
