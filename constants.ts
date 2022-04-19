@@ -125,3 +125,42 @@ export const TOPICS = {
     technology: 'technology',
     technologyPath: '/blog/technology'
 }
+
+export const FOOTER_LINKS = [
+    {
+        siteName: 'Home',
+        url: '/'
+    },
+    {
+        siteName: 'Blog',
+        url: '/blog'
+    },
+    {
+        siteName: 'About',
+        url: '/about'
+    },
+    {
+        siteName: 'Youtube',
+        url: 'https://www.youtube.com/channel/UCr8h9u258fq605akq_dGA1A?sub_confirmation=1'
+    },
+    {
+        siteName: 'Instagram',
+        url: 'https://www.instagram.com/the_life_of_jamal_/'
+    },
+    {
+        siteName: 'Facebook',
+        url: 'https://www.facebook.com/YTJamalGardiner'
+    },
+    {
+        siteName: 'Github',
+        url: 'https://github.com/Croisade'
+    },
+    {
+        siteName: 'Merchandise',
+        url: 'https://www.amazon.com/s?rh=n%3A7141123011%2Cp_4%3ATLOJ&ref=bl_sl_s_ap_web_7141123011'
+    },
+    {
+        siteName: 'Peripherals',
+        url: '/peripherals'
+    }
+]
