@@ -43,7 +43,7 @@ export default function Home({ posts }) {
                             {PERSONAL_INFORMATION.firstName + ' ' + PERSONAL_INFORMATION.lastName}
                         </Heading>
                         <Text sx={{ mt: '2', display: 'block' }}>{PERSONAL_INFORMATION.about}</Text>
-                        <Link href="/about">
+                        <Link href="/about" passHref>
                             <Button variant="secondary" sx={{ mt: '5' }}>
                                 {PERSONAL_INFORMATION.learnAboutMe}
                             </Button>

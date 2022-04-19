@@ -1,7 +1,7 @@
 import { NextSeo } from 'next-seo'
 import { PERSONAL_INFORMATION, WEBSITE_INFORMATION } from '@constants'
 
-interface SEOInput {
+type SEOInput = {
     title: string
     description: string
     image: string
