@@ -1,4 +1,5 @@
 /** @jsxImportSource theme-ui */
+import { WEBSITE_INFORMATION } from '@constants'
 import Link from 'next/link'
 import { Box, Flex, Grid, Heading, Text } from 'theme-ui'
 
@@ -159,12 +160,7 @@ const Footer = () => {
 
                         <Box>
                             <Heading as="h4">Disclosure</Heading>
-                            <Text>
-                                TLOJ is a participant in the Amazon Services LLC Associates Program,
-                                an affiliate advertising program designed to provide a means for
-                                sites to earn advertising fees by advertising and linking to
-                                amazon.com.
-                            </Text>
+                            <Text>{WEBSITE_INFORMATION.amazonAssociateDisclaimer}</Text>
                         </Box>
                     </Grid>
                 </div>

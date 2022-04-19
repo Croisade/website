@@ -61,16 +61,6 @@ export const Newsletter = () => {
                         id="mce-EMAIL"
                         mb={3}
                     />
-                    {/* <div id="mce-responses" className="clear">
-                        <div
-                            className="response"
-                            id="mce-error-response"
-                            style="display:none"></div>
-                        <div
-                            className="response"
-                            id="mce-success-response"
-                            style="display:none"></div>
-                    </div> */}
                     <Flex sx={{ justifyContent: 'center' }}>
                         <Button>Submit</Button>
                     </Flex>
