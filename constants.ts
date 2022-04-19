@@ -28,6 +28,11 @@ export const WEBSITE_INFORMATION = {
         'TLOJ is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to amazon.com.'
 }
 
+export const MAILCHIMP_NEWSLETTER = {
+    callToAction: 'Ready to join the Coder Cafe?',
+    joinMessage: 'Join our community for a weekly dose of my latest videos and articles.'
+}
+
 export const IMAGES = {
     personalLogo: 'https://cdn1.thelifeofjamal.com/public/JamalLogo.png',
     personalLogoAlt: 'Picture of Jamal',
@@ -36,10 +41,16 @@ export const IMAGES = {
 }
 
 export const URLS = {
+    home: '/',
+    blog: '/blog',
+    peripherals: '/peripherals',
+    about: '/about',
     facebook: 'https://www.facebook.com/YTJamalGardiner',
     instagram: 'https://www.instagram.com/the_life_of_jamal_/',
     youtube: 'https://www.youtube.com/channel/UCr8h9u258fq605akq_dGA1A?sub_confirmation=1',
-    github: 'https://github.com/Croisade'
+    github: 'https://github.com/Croisade',
+    mailchimpSubmit:
+        'https://live.us3.list-manage.com/subscribe/post?u=827b5c696729af48377892a43&amp;id=5a7c20ecb7'
 }
 
 export const PERIPHERALS = {
@@ -115,29 +126,25 @@ export const PERIPHERALS = {
     ]
 }
 
-export const TOPICS = {
-    health: 'health',
-    healthPath: '/blog/health',
-    life: 'life',
-    lifePath: '/blog/life',
-    politics: 'politics',
-    politicsPath: '/blog/politics',
-    technology: 'technology',
-    technologyPath: '/blog/technology'
-}
+export const TOPICS = [
+    { topic: 'Health', path: '/blog/health' },
+    { topic: 'Life', path: '/blog/life' },
+    { topic: 'Politics', path: '/blog/politics' },
+    { topic: 'Technology', path: '/blog/technology' }
+]
 
 export const FOOTER_LINKS = [
     {
         siteName: 'Home',
-        url: '/'
+        url: URLS.home
     },
     {
         siteName: 'Blog',
-        url: '/blog'
+        url: URLS.blog
     },
     {
         siteName: 'About',
-        url: '/about'
+        url: URLS.about
     },
     {
         siteName: 'Youtube',
@@ -161,6 +168,6 @@ export const FOOTER_LINKS = [
     },
     {
         siteName: 'Peripherals',
-        url: '/peripherals'
+        url: URLS.peripherals
     }
 ]

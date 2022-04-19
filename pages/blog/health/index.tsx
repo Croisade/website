@@ -15,10 +15,10 @@ export default function IndexPage({ posts }) {
     return (
         <div sx={{ maxWidth: '70%', ml: 'auto', mr: 'auto' }}>
             <SEO
-                title={TOPICS.health + ' - ' + WEBSITE_INFORMATION.siteNameLowerCase}
+                title={TOPICS[0].topic + ' - ' + WEBSITE_INFORMATION.siteNameLowerCase}
                 description={PERSONAL_INFORMATION.about}
                 image={IMAGES.banner}
-                url={WEBSITE_INFORMATION.url + TOPICS.healthPath}
+                url={WEBSITE_INFORMATION.url + TOPICS[0].path}
             />
             <Banner />
             <h1>Health</h1>

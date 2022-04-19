@@ -1,4 +1,5 @@
 /** @jsxImportSource theme-ui */
+import { IMAGES, MAILCHIMP_NEWSLETTER, URLS } from '@constants'
 import Image from 'next/image'
 import { Box, Button, Flex, Input, Label, Text } from 'theme-ui'
 
@@ -21,8 +22,8 @@ export const Newsletter = () => {
             <div sx={{ ml: 3, mr: 3, mt: 2, mb: 2 }}>
                 <Flex sx={{ justifyContent: 'center' }}>
                     <Image
-                        src="https://cdn1.thelifeofjamal.com/public/JamalLogo.png"
-                        alt="Picture of the author"
+                        src={IMAGES.personalLogo}
+                        alt={IMAGES.personalLogoAlt}
                         width={150}
                         height={200}
                     />
@@ -34,7 +35,7 @@ export const Newsletter = () => {
                         textAlign: 'center',
                         display: 'block'
                     }}>
-                    Ready to join the Coder Cafe?
+                    {MAILCHIMP_NEWSLETTER.callToAction}
                 </Text>
                 <Text
                     sx={{
@@ -43,10 +44,10 @@ export const Newsletter = () => {
                         textAlign: 'center',
                         display: 'block'
                     }}>
-                    Join our community for a weekly dose of my latest videos and articles.{' '}
+                    {MAILCHIMP_NEWSLETTER.joinMessage}
                 </Text>
                 <form
-                    action="https://live.us3.list-manage.com/subscribe/post?u=827b5c696729af48377892a43&amp;id=5a7c20ecb7"
+                    action={URLS.mailchimpSubmit}
                     method="post"
                     id="mc-embedded-subscribe-form"
                     name="mc-embedded-subscribe-form"
