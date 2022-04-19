@@ -49,6 +49,8 @@ export const URLS = {
     instagram: 'https://www.instagram.com/the_life_of_jamal_/',
     youtube: 'https://www.youtube.com/channel/UCr8h9u258fq605akq_dGA1A?sub_confirmation=1',
     github: 'https://github.com/Croisade',
+    merchandise:
+        'https://www.amazon.com/s?rh=n%3A7141123011%2Cp_4%3ATLOJ&ref=bl_sl_s_ap_web_7141123011',
     mailchimpSubmit:
         'https://live.us3.list-manage.com/subscribe/post?u=827b5c696729af48377892a43&amp;id=5a7c20ecb7'
 }
@@ -148,23 +150,23 @@ export const FOOTER_LINKS = [
     },
     {
         siteName: 'Youtube',
-        url: 'https://www.youtube.com/channel/UCr8h9u258fq605akq_dGA1A?sub_confirmation=1'
+        url: URLS.youtube
     },
     {
         siteName: 'Instagram',
-        url: 'https://www.instagram.com/the_life_of_jamal_/'
+        url: URLS.instagram
     },
     {
         siteName: 'Facebook',
-        url: 'https://www.facebook.com/YTJamalGardiner'
+        url: URLS.facebook
     },
     {
         siteName: 'Github',
-        url: 'https://github.com/Croisade'
+        url: URLS.github
     },
     {
         siteName: 'Merchandise',
-        url: 'https://www.amazon.com/s?rh=n%3A7141123011%2Cp_4%3ATLOJ&ref=bl_sl_s_ap_web_7141123011'
+        url: URLS.merchandise
     },
     {
         siteName: 'Peripherals',

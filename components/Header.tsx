@@ -49,9 +49,7 @@ const Header = () => {
                                 </div>
                             </li>
                             <li sx={{ display: 'inline' }}>
-                                <a
-                                    href="https://www.amazon.com/s?rh=n%3A7141123011%2Cp_4%3ATLOJ&ref=bl_sl_s_ap_web_7141123011"
-                                    sx={{ variant: 'styles.nav' }}>
+                                <a href={URLS.merchandise} sx={{ variant: 'styles.nav' }}>
                                     Merch
                                 </a>
                             </li>
