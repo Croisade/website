@@ -14,7 +14,6 @@ import Link from 'next/link'
 import path from 'path'
 import { Box, Button, Grid, Heading, Text } from 'theme-ui'
 
-//@TODO include meta description for header
 export default function Home({ posts }) {
     return (
         <div>

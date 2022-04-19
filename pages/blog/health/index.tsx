@@ -1,17 +1,25 @@
 /** @jsxImportSource theme-ui */
+import Banner from '@components/Banner'
+import Footer from '@components/Footer'
+import { IndexPost } from '@components/IndexPost'
+import { SEO } from '@components/SEO'
+import { IMAGES, PERSONAL_INFORMATION, WEBSITE_INFORMATION, TOPICS } from '@constants'
 import fs from 'fs'
 import glob from 'glob'
 import matter from 'gray-matter'
 import _ from 'lodash'
 import path from 'path'
 import { Grid } from 'theme-ui'
-import Banner from '../../../components/Banner'
-import Footer from '../../../components/Footer'
-import { IndexPost } from '../../../components/IndexPost'
 
 export default function IndexPage({ posts }) {
     return (
         <div sx={{ maxWidth: '70%', ml: 'auto', mr: 'auto' }}>
+            <SEO
+                title={TOPICS.health + ' - ' + WEBSITE_INFORMATION.siteNameLowerCase}
+                description={PERSONAL_INFORMATION.about}
+                image={IMAGES.banner}
+                url={WEBSITE_INFORMATION.url + TOPICS.healthPath}
+            />
             <Banner />
             <h1>Health</h1>
             <Grid gap={3} columns={[1, null, 2]}>
