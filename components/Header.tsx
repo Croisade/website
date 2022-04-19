@@ -1,5 +1,6 @@
 /** @jsxImportSource theme-ui */
 import Dark from '@components/Darkmode'
+import { TOPICS, URLS } from '@constants'
 import Link from 'next/link'
 import { Container } from 'theme-ui'
 
@@ -8,7 +9,7 @@ const Header = () => {
         <Container sx={{ bg: 'muted', borderBottom: '1px solid', borderColor: 'primary' }}>
             <header className="main-header">
                 <div className="container">
-                    <Link href="/">
+                    <Link href={URLS.home}>
                         <a
                             sx={{
                                 fontSize: 4,
@@ -26,31 +27,24 @@ const Header = () => {
                             <li sx={{ display: 'inline' }}>
                                 <div className="dropdown" sx={{ display: 'inline' }}>
                                     <button className="dropbtn">
-                                        <Link href="/blog">
+                                        <Link href={URLS.blog}>
                                             <a sx={{ variant: 'styles.nav', mt: '1' }}>Blog</a>
                                         </Link>
                                     </button>
                                     <div className="dropdown-content" sx={{ bg: 'muted' }}>
-                                        <Link href="/blog/technology">
-                                            <a sx={{ variant: 'styles.nav', color: 'text' }}>
-                                                Technology
-                                            </a>
-                                        </Link>
-                                        <Link href="/blog/politics">
-                                            <a sx={{ variant: 'styles.nav', color: 'text' }}>
-                                                Politics
-                                            </a>
-                                        </Link>
-                                        <Link href="/blog/health">
-                                            <a sx={{ variant: 'styles.nav', color: 'text' }}>
-                                                Health
-                                            </a>
-                                        </Link>
-                                        <Link href="/blog/life">
-                                            <a sx={{ variant: 'styles.nav', color: 'text' }}>
-                                                Life
-                                            </a>
-                                        </Link>
+                                        {TOPICS.map((x) => {
+                                            return (
+                                                <Link key={x.topic} href={x.path}>
+                                                    <a
+                                                        sx={{
+                                                            variant: 'styles.nav',
+                                                            color: 'text'
+                                                        }}>
+                                                        {x.topic}
+                                                    </a>
+                                                </Link>
+                                            )
+                                        })}
                                     </div>
                                 </div>
                             </li>
@@ -62,7 +56,7 @@ const Header = () => {
                                 </a>
                             </li>
                             <li sx={{ display: 'inline' }}>
-                                <Link href="/about">
+                                <Link href={URLS.about}>
                                     <a sx={{ variant: 'styles.nav' }}>About</a>
                                 </Link>
                             </li>
