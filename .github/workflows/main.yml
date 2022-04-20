@@ -4,24 +4,20 @@ on:
   release:
     types: [published]
 
-jobs:
-  zip-files:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@master
-    - name: Archive Release
-      uses: thedoctor0/zip-release@master
-      with:
-        type: 'zip'
-        filename: 'deploy.zip'
-        exclusions: '*.git* /*node_modules/* .editorconfig'
-          
+jobs:     
   build:
     runs-on: ubuntu-latest
     steps:
 
     - name: Checkout source code
       uses: actions/checkout@v2
+      
+    - name: Archive Release
+      uses: thedoctor0/zip-release@master
+      with:
+        type: 'zip'
+        filename: 'deploy.zip'
+        exclusions: '*.git* /*node_modules/* .editorconfig'
 
     - name: Generate deployment package
       run: zip -r deploy.zip . -x '*.git*'
