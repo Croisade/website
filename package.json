@@ -10,6 +10,7 @@
         "lint": "eslint --fix .",
         "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
     },
+    "engines": { "node" : "16.6.2" },
     "dependencies": {
         "@babel/core": "^7.12.9",
         "@babel/node": "^7.12.6",
