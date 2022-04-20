@@ -156,14 +156,18 @@ v10.15.2
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Port to TypeScript
-- [ ] Move all text fields to ./constants
+- [x] Port to TypeScript
+- [x] Move all text fields to ./constants
 - [ ] Build out backend connecting to Youtube/Google
+- [ ] Upload images to cdn, implement images in SEO meta tags
 - [ ] Github actions for build, test, deploy
+    - [ ] build
+    - [ ] test
+    - [x] deploy
 - [ ] Multi-language Support
     - [ ] Spanish
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/Croisade/website/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -210,16 +214,10 @@ Project Link: [https://github.com/Croisade/Website](https://github.com/Croisade/
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
 * [Choose an Open Source License](https://choosealicense.com)
 * [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
 * [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
 * [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
