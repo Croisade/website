@@ -29,6 +29,6 @@ jobs:
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         application_name: Webby
         environment_name: Webby-env
-        version_label: 12345
+        version_label: ${{ github.run_number }}
         region: us-east-1
         deployment_package: deploy.zip
