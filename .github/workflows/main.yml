@@ -30,5 +30,5 @@ jobs:
         application_name: Webby
         environment_name: Webby-env
         version_label: 12345
-        region: us-west-1
+        region: us-east-1
         deployment_package: deploy.zip
