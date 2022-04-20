@@ -1,4 +1,5 @@
 /** @jsxImportSource theme-ui */
+import { IMAGES, PERSONAL_INFORMATION, TOPICS, WEBSITE_INFORMATION } from '@constants'
 import fs from 'fs'
 import glob from 'glob'
 import matter from 'gray-matter'
@@ -7,9 +8,10 @@ import Head from 'next/head'
 import Link from 'next/link'
 import path from 'path'
 import { Box, Grid, Heading } from 'theme-ui'
-import Banner from '../../components/Banner'
-import Footer from '../../components/Footer'
-import { IndexPost } from '../../components/IndexPost'
+import Banner from '@components/Banner'
+import Footer from '@components/Footer'
+import { IndexPost } from '@components/IndexPost'
+import { SEO } from '@components/SEO'
 
 //@TODO implement search
 export default function IndexPage({ posts }) {
@@ -19,8 +21,13 @@ export default function IndexPage({ posts }) {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta charSet="utf-8" />
                 <meta name="Description" content={''}></meta>
-                <title>{'Blog - The Life Of Jamal'}</title>
             </Head>
+            <SEO
+                title={TOPICS[4].topic + ' - ' + WEBSITE_INFORMATION.siteNameLowerCase}
+                description={PERSONAL_INFORMATION.about}
+                image={IMAGES.banner}
+                url={WEBSITE_INFORMATION.url + TOPICS[4].path}
+            />
             <Banner />
             <div
                 sx={{

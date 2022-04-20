@@ -28,10 +28,16 @@ export default function IndexPage({ source, posts }) {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta charSet="utf-8" />
                 {/* Open Graph Protocol */}
-                <SEO title={title} description={description} url={url} image={image} date={date} />
             </Head>
             <main>
                 <div sx={{ height: `calc(100vh - 120px)` }}>
+                    <SEO
+                        title={title}
+                        description={description}
+                        url={url}
+                        image={image}
+                        date={date}
+                    />
                     <Banner />
                     <div sx={{ maxWidth: '70%', ml: 'auto', mr: 'auto', pr: '5' }}>
                         <Grid gap={2} columns={[1, null, 2, '2.5fr 1fr']}>

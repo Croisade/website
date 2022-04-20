@@ -132,7 +132,8 @@ export const TOPICS = [
     { topic: 'Health', path: '/blog/health' },
     { topic: 'Life', path: '/blog/life' },
     { topic: 'Politics', path: '/blog/politics' },
-    { topic: 'Technology', path: '/blog/technology' }
+    { topic: 'Technology', path: '/blog/technology' },
+    { topic: 'Blog', path: '/blog' }
 ]
 
 export const FOOTER_LINKS = [

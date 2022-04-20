@@ -20,12 +20,6 @@ export default function Home({ posts }) {
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta charSet="utf-8" />
-                <SEO
-                    title={WEBSITE_INFORMATION.siteNameLowerCase}
-                    description={PERSONAL_INFORMATION.about}
-                    image={IMAGES.banner}
-                    url={WEBSITE_INFORMATION.url}
-                />
             </Head>
             <Banner />
             <div
@@ -35,6 +29,12 @@ export default function Home({ posts }) {
                     ml: 'auto',
                     mr: 'auto'
                 }}>
+                <SEO
+                    title={WEBSITE_INFORMATION.siteNameLowerCase}
+                    description={PERSONAL_INFORMATION.about}
+                    image={IMAGES.banner}
+                    url={WEBSITE_INFORMATION.url}
+                />
                 <Heading as="h1">{WEBSITE_INFORMATION.home}</Heading>
                 <Grid gap={2} columns={[1, null, 2, '2.5fr 1fr']}>
                     <Box sx={{ mt: '3' }}>

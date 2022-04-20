@@ -23,8 +23,8 @@ export default function IndexPage({ posts }) {
             <Banner />
             <h1>Politics</h1>
             <Grid gap={3} columns={[1, null, 2]}>
-                {posts.map((post) => (
-                    <IndexPost key={post.link} data={post} />
+                {posts.map((post, i) => (
+                    <IndexPost key={i} data={post} />
                 ))}
             </Grid>
             <Footer />

@@ -18,12 +18,6 @@ export default function About() {
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta charSet="utf-8" />
-                <SEO
-                    title={WEBSITE_INFORMATION.siteNameLowerCase}
-                    description={PERSONAL_INFORMATION.about}
-                    image={IMAGES.banner}
-                    url={WEBSITE_INFORMATION.url}
-                />
             </Head>
             <div
                 sx={{
@@ -32,6 +26,12 @@ export default function About() {
                     ml: 'auto',
                     mr: 'auto'
                 }}>
+                <SEO
+                    title={WEBSITE_INFORMATION.siteNameLowerCase}
+                    description={PERSONAL_INFORMATION.about}
+                    image={IMAGES.banner}
+                    url={WEBSITE_INFORMATION.url}
+                />
                 <Banner />
                 <Heading as="h1">About</Heading>
                 <Grid gap={2} columns={[1, null, 2, '2fr 1fr']}>
