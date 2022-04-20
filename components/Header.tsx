@@ -3,6 +3,7 @@ import Dark from '@components/Darkmode'
 import { TOPICS, URLS } from '@constants'
 import Link from 'next/link'
 import { Container } from 'theme-ui'
+import initial from 'lodash/initial'
 
 const Header = () => {
     return (
@@ -32,7 +33,7 @@ const Header = () => {
                                         </Link>
                                     </button>
                                     <div className="dropdown-content" sx={{ bg: 'muted' }}>
-                                        {TOPICS.map((x) => {
+                                        {initial(TOPICS).map((x) => {
                                             return (
                                                 <Link key={x.topic} href={x.path}>
                                                     <a
