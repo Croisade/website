@@ -4,8 +4,8 @@
     "private": true,
     "scripts": {
         "dev": "next dev",
-        "build": "next build",
-        "deploy": "next start -- --port $PORT",
+        "build": "NODE_OPTIONS=\"--max_old_space_size=4096\" next build",
+        "deploy": "NODE_OPTIONS=\"--max_old_space_size=4096\" next start -- --port $PORT",
         "start": "npm run build && npm run deploy",
         "lint": "eslint --fix .",
         "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
