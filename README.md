@@ -159,6 +159,7 @@ v10.15.2
 - [x] Port to TypeScript
 - [x] Move all text fields to ./constants
 - [ ] Build out backend connecting to Youtube/Google
+- [ ] Implement google analytics and create a dashboard for website states
 - [ ] Upload images to cdn, implement images in SEO meta tags
 - [ ] Github actions for build, test, deploy
     - [ ] build
