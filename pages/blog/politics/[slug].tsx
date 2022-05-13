@@ -38,7 +38,7 @@ export default function IndexPage({ source, posts }) {
                         date={date}
                     />
                     <Banner />
-                    <div sx={{ maxWidth: '70%', ml: 'auto', mr: 'auto', pr: '5' }}>
+                    <div sx={{ maxWidth: '70%', ml: 'auto', mr: 'auto' }}>
                         <Grid gap={2} columns={[1, null, 2, '2.5fr 1fr']}>
                             <Box>
                                 <div className="content">
