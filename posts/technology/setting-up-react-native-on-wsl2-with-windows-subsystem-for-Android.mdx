@@ -1,0 +1,95 @@
+---
+date: May 13, 2022
+description: Setting up react-native on wsl2 to use windows subsystem for android was a huge pain in the ass for me and I'm hoping that this can help other people.
+image: [/subsystemForAndroid.png, /adbDevices.png]
+title: Setting Up React-Native on Windows with Windows Subsystem For Linux and Windows Subsystem for Android
+readTime: 2
+url: setting-up-react-native-on-wsl2-with-windows-subsystem-for-Android
+root: /technology/
+---
+
+# Setting Up React-Native on Windows with Windows Subsystem For Linux and Windows Subsystem for Android
+
+- [Setting Up React-Native on Windows with Windows Subsystem For Linux and Windows Subsystem for Android](#setting-up-react-native-on-windows-with-windows-subsystem-for-linux-and-windows-subsystem-for-android)
+  - [In Windows](#in-windows)
+    - [Android Studio](#android-studio)
+    - [Enable Windows Subsystem for Android](#enable-windows-subsystem-for-android)
+  - [In WSL](#in-wsl)
+    - [Java 11](#java-11)
+    - [Android SDK](#android-sdk)
+    - [Add ADB Device](#add-adb-device)
+    - [Create React Native App](#create-react-native-app)
+
+
+Setting up react-native on wsl2 to use windows subsystem for android was a huge pain in the ass for me and I'm hoping that this can help other people.
+
+## In Windows
+
+### Android Studio
+Install Android Studio, [see here](https://developer.android.com/studio#downloads)
+
+In powershell run
+```
+adb start-server
+```
+### Enable Windows Subsystem for Android
+Set Windows subsystem for Android to developer mode and copy the ip address
+
+<Image src={image[0]} alt="Hacker Rank" width={1190} height={1080} priority />
+
+## In WSL
+### Java 11
+First we need Java
+```bash
+sudo apt install openjdk-11-jdk
+```
+
+### Android SDK
+```bash
+wget https://dl.google.com/android/repository/commandlinetools-linux-8092744_latest.zip
+mkdir -p Android/cmdline-tools
+unzip commandlinetools-linux-8092744_latest.zip -d Android/cmdline-tools
+mv Android/cmdline-tools/cmdline-tools Android/cmdline-tools/latest
+
+# place this in .bashrc/.zshrc
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH"
+
+sdkmanager --update
+sdkmanager --list | grep build-tools
+sdkmanager "build-tools;31.0.0" "platform-tools" "platforms;android-31" "cmdline-tools;latest"
+sdkmanager --licenses
+
+sudo apt install gradle
+```
+
+[Inspired by this gist](https://gist.github.com/jason-s-yu/30375db45c1f71c1259e042d216e4bd3)
+
+### Add ADB Device
+
+Using the ip address we copied from the Windows subsystem for Android window
+
+```bash
+adb connect <IP ADDRESS>
+```
+
+running `adb devices` should show our devices
+
+
+<Image src={image[1]} alt="adb devices" width={290} height={61} priority />
+
+
+### Create React Native App
+Initialize a project
+```bash
+npx react-native init AwesomeProject
+```
+In the project run
+```bash
+npm run start
+```
+In another window run
+```bash
+npm run android
+```
+
