@@ -1,0 +1,59 @@
+---
+date: June 8, 2022
+description: Partially update a record in mongoDB with golang
+image: /golang.png
+title: Golang Partial Update In Mongo
+readTime: 2
+url: golang-partial-update-in-mongo
+root: /technology/
+---
+
+# Golang Partial Update In Mongo
+
+Ran into a issue while learning Golang where I wanted to partially update a document. So for instance if I have a document that contains something similar to this:
+
+```js
+{
+    Id: "123",
+    firstName: "Jamal",
+    lastName: "Gardiner"
+}
+```
+
+I want to be able to update this by passing only the ID, to locate the document in the database, and whatever fields I wanted to update. For instance, if I wanted to change the first name from "Jamal" to "Charles" I could craft a request like `{ Id: "123", firstName: "Charles"}`. In golang If I attempted to only update one field it would update that field but would set every other property on the document to their identity. This solved the problem for me.
+
+```go
+func (s *AccountServiceImpl) UpdateAccount(account *models.Account) error {
+	filter := bson.M{"accountId": account.AccountId}
+	var err error
+
+	existingAccount, err := s.GetAccount(account.AccountId)
+
+	if err != nil {
+		return err
+	}
+
+	if account.Email != "" {
+		existingAccount.Email = account.Email
+	}
+	if account.Password != "" {
+		existingAccount.Password = account.Password
+	}
+	if account.FirstName != "" {
+		existingAccount.FirstName = account.FirstName
+	}
+	if account.LastName != "" {
+		existingAccount.LastName = account.LastName
+	}
+
+	existingAccount.UpdatedAt = primitive.Timestamp{T: uint32(time.Now().Unix())}
+
+	_, err = s.accountcollection.UpdateOne(s.ctx, filter, bson.M{"$set": existingAccount})
+
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+```
